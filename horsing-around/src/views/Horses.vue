@@ -1,16 +1,16 @@
 <template>
     <h3>This is Profit Page</h3>
-    <ProfitDisplay/>    
+    <HorsesPage/>    
 </template>
 
 <script>
-import ProfitDisplay from '@/components/ProfitDisplay.vue'
+import HorsesPage from '@/components/HorsesPage.vue'
 
 
 export default {
     name: "OnlyProfit",
     components:{
-        ProfitDisplay
+        HorsesPage
     }
 }
 </script>
