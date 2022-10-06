@@ -66,7 +66,7 @@ export default {
             async function val(){
                 // let binance = new ccxt.binance()
                 // let x = await binance.fetch_ohlcv(ticker,"5m")
-                cell6.innerHTML = 100
+                cell6.innerHTML = 1000
                 cell7.innerHTML = Math.round(quantity * (-parseFloat(price) + parseFloat(cell6.innerHTML)))
                 tp = tp + parseFloat(cell7.innerHTML)
                 document.getElementById("totalProfit").innerHTML = ("Total Profit is: $" +  String(tp))

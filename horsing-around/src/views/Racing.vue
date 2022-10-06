@@ -1,23 +1,23 @@
 <template>
-<WelcomeCPP/>
-<AddCoin @added="change"/>
-<ProfitDisplay :key="refreshComp"/>
+<RacingPage/>
+<JockeyPage @added="change"/>
+<HorsesPage :key="refreshComp"/>
 
 
 </template>
 
 
 <script>
-import WelcomeCPP from '@/components/WellcomeCpp.vue'
-import AddCoin from '@/components/AddCoin.vue'
-import ProfitDisplay from '@/components/ProfitDisplay.vue'
+import RacingPage from '@/components/RacingPage.vue'
+import JockeyPage from '@/components/JockeyPage.vue'
+import HorsesPage from '@/components/HorsesPage.vue'
 
 export default {
   name: 'App',
   components:{
-    WelcomeCPP,
-    AddCoin,
-    ProfitDisplay
+    RacingPage,
+    JockeyPage,
+    HorsesPage
   },
   data(){
     return {
