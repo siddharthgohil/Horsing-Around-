@@ -27,7 +27,7 @@ const db = getFirestore(firebaseApp);
 
 
 export default {
-    name: "ProfitDisplay",
+    name: "JockeyPage",
     mounted(){
         async function display(){
             let z = await getDocs(collection(db, "Portfolio"))

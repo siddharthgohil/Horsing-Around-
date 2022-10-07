@@ -35,6 +35,7 @@ const db = getFirestore(firebaseApp);
 
 
 export default {
+    emits: ["added"],
     methods: {
         async savetofs(){
             var a = document.getElementById('coin1').value

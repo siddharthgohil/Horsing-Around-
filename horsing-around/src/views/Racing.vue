@@ -1,7 +1,9 @@
 <template>
-<RacingPage/>
-<JockeyPage @added="change"/>
-<HorsesPage :key="refreshComp"/>
+<!-- <RacingPage/> -->
+<!-- AddCoin page will emit added  -->
+<!-- that will trigger change which will refresh the page  -->
+<!-- <JockeyPage :key="refreshComp"/>
+<HorsesPage  @added="change"/> -->
 <RaceCard/>
 
 
@@ -9,17 +11,17 @@
 
 
 <script>
-import RacingPage from '@/components/RacingPage.vue'
-import JockeyPage from '@/components/JockeyPage.vue'
-import HorsesPage from '@/components/HorsesPage.vue'
+// import RacingPage from '@/components/RacingPage.vue'
+// import JockeyPage from '@/components/JockeyPage.vue'
+// import HorsesPage from '@/components/HorsesPage.vue'
 import RaceCard from '@/components/RaceCard.vue'
 
 export default {
   name: 'App',
   components:{
-    RacingPage,
-    JockeyPage,
-    HorsesPage,
+    // RacingPage,
+    // JockeyPage,
+    // HorsesPage,
     RaceCard
   },
   data(){

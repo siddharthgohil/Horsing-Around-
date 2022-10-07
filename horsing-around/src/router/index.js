@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import RacingPage from '@/views/Racing.vue'
 import JockeyPage from '@/views/Jockey.vue'
 import HorsesPage from '@/views/Horses.vue'
+import LoginPage from '@/views/Login.vue'
 
 const routes = [
 {
@@ -19,6 +20,11 @@ const routes = [
     path: '/jockey',
     name: 'Jockey',
     component: JockeyPage
+},
+{
+    path: '/login',
+    name: 'Login',
+    component: LoginPage
 }
 ]
 const router = createRouter({
