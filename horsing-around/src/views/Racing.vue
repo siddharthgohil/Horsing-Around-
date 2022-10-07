@@ -2,6 +2,7 @@
 <RacingPage/>
 <JockeyPage @added="change"/>
 <HorsesPage :key="refreshComp"/>
+<RaceCard/>
 
 
 </template>
@@ -11,13 +12,15 @@
 import RacingPage from '@/components/RacingPage.vue'
 import JockeyPage from '@/components/JockeyPage.vue'
 import HorsesPage from '@/components/HorsesPage.vue'
+import RaceCard from '@/components/RaceCard.vue'
 
 export default {
   name: 'App',
   components:{
     RacingPage,
     JockeyPage,
-    HorsesPage
+    HorsesPage,
+    RaceCard
   },
   data(){
     return {
