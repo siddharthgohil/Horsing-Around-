@@ -1,3 +1,5 @@
+<!-- Portfolio and Table -->
+
 <template>
     <h1 id = "Current">Current Portfolio</h1>
     <table id = "table" class = "auto-index">
