@@ -1,3 +1,5 @@
+<!-- Add coin page -->
+
 <template>
     <div class = "container">
         <form id = 'myform'>

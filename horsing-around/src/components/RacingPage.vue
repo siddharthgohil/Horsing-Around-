@@ -1,3 +1,5 @@
+<!-- Just welcome to CPP -->
+
 <template>
     <h1>Welcome to CPP</h1>
 </template>
