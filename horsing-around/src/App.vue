@@ -1,33 +1,30 @@
 <template>
-  
-  <div id="nav">
-    <router-link to="/">Racing</router-link> |
-    <router-link to="/horses">Horses</router-link> |
-    <router-link to="/jockey">Jockey</router-link> 
-    <div class = 'login'>
-      <router-link to="/login">Login</router-link>
+  <div class = 'allPages'>
+    <div id="nav">
+      <router-link to="/">Racing</router-link> |
+      <router-link to="/horses">Horses</router-link> |
+      <router-link to="/jockey">Jockey</router-link>
+      <div class="login">
+        <router-link to="/login">Login</router-link>
+      </div>
     </div>
+    
+    <router-view></router-view>
+
+    
   </div>
-  <router-view />
 </template>
 
-
 <script>
-
 export default {
-  name: 'App',
-  // data() {
-  // },
-  // methods: {
-  // },
-
-}
-
+  name: "App",
+};
 </script>
 
-
-
 <style>
+.allPages{
+  background-color: rgb(237, 235, 231);
+}
 #app {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,7 +38,6 @@ export default {
   padding: 10px;
   background-color: rgb(176, 176, 176);
   margin-bottom: 30px;
-
 }
 
 #nav a {
@@ -50,10 +46,10 @@ export default {
 }
 
 #nav a.router-link-exact-active {
-  color: #750e7e
+  color: #750e7e;
 }
 
-.login{
+.login {
   float: right;
 }
 </style>

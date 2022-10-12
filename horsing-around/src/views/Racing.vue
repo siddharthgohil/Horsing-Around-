@@ -4,8 +4,10 @@
 <!-- that will trigger change which will refresh the page  -->
 <!-- <JockeyPage :key="refreshComp"/>
 <HorsesPage  @added="change"/> -->
-<RaceCard/>
-
+<div>
+  <RaceCard/>
+  <RaceAnalysis/>
+</div>
 
 </template>
 
@@ -13,7 +15,7 @@
 <script>
 // import RacingPage from '@/components/RacingPage.vue'
 // import JockeyPage from '@/components/JockeyPage.vue'
-// import HorsesPage from '@/components/HorsesPage.vue'
+import RaceAnalysis from '@/components/RaceAnalysis.vue'
 import RaceCard from '@/components/RaceCard.vue'
 
 export default {
@@ -22,7 +24,8 @@ export default {
     // RacingPage,
     // JockeyPage,
     // HorsesPage,
-    RaceCard
+    RaceCard,
+    RaceAnalysis
   },
   data(){
     return {
