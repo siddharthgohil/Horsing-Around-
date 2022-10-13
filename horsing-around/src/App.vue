@@ -9,6 +9,7 @@
     </div>
   </div>
   <router-view />
+
 </template>
 
 
@@ -34,10 +35,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 20px;
 }
 
 #nav {
+  top: 0px;
   padding: 10px;
   background-color: rgb(176, 176, 176);
   margin-bottom: 30px;
