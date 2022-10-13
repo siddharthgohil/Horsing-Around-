@@ -49,7 +49,7 @@ export default {
 <style scoped>
   .AllRaces {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 8fr;
     background-color: #6A2889;
     height: 100vh;
     width: 100vw;
