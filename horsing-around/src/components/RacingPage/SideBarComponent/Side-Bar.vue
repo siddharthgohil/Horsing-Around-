@@ -3,7 +3,7 @@
         <div class="menu-items">
             <!-- Stores the number of race of the day -->
             <router-link to='/' class="side-btn" active-class="active" >
-                <button class="link-container">
+                <button class="link-container side-btn-active">
                     Race 1
                 </button>
             </router-link>
@@ -52,9 +52,11 @@ export default {
         border:none;
         background-color: #954AB8;
         color:white;
-
     }
-
+    .side-btn-active {
+        color: #954AB8;
+        background-color: #F1ECEC;
+    }
     .sider-btn, .link-container {
         width: 100%;
 

@@ -56,7 +56,7 @@ export default {
   }
 
   .content {
-    background-color: white;
+    background-color: #F1ECEC;
     border-radius: 20px;
 
   }
