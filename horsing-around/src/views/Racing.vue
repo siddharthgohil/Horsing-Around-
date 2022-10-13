@@ -5,6 +5,7 @@
 <!-- <JockeyPage :key="refreshComp"/>
 <HorsesPage  @added="change"/> -->
 <div>
+  <NewsTicker/>
   <RaceCard/>
   <RaceAnalysis/>
 </div>
@@ -17,6 +18,7 @@
 // import JockeyPage from '@/components/JockeyPage.vue'
 import RaceAnalysis from '@/components/RaceAnalysis.vue'
 import RaceCard from '@/components/RaceCard.vue'
+import NewsTicker from '@/components/NewsTicker.vue'
 
 export default {
   name: 'App',
@@ -25,7 +27,8 @@ export default {
     // JockeyPage,
     // HorsesPage,
     RaceCard,
-    RaceAnalysis
+    RaceAnalysis,
+    NewsTicker
   },
   data(){
     return {
