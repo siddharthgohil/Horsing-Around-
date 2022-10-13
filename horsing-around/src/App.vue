@@ -30,7 +30,7 @@ export default {
 
 <style>
 #app {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -41,7 +41,6 @@ export default {
   top: 0px;
   padding: 10px;
   background-color: rgb(176, 176, 176);
-  margin-bottom: 30px;
 
 }
 
