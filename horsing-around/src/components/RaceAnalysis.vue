@@ -4,15 +4,14 @@
       <!-- Add image -->
       <h2 class="HeaderTag">Race Analysis</h2>
     </div>
-    <div id="RaceAnalysisText">
-    </div>
+    <div id="RaceAnalysisText"></div>
   </div>
 </template>
 
 <script>
-import firebaseApp from '../firebase.js'
-import {getFirestore} from 'firebase/firestore'
-import {collection, getDocs} from 'firebase/firestore';
+import firebaseApp from "../firebase.js";
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const db = getFirestore(firebaseApp);
 export default {
@@ -20,20 +19,16 @@ export default {
   created() {
     async function display() {
       let z = await getDocs(collection(db, "RachingAnalysisText"));
-      var container  = document.getElementById("RaceAnalysisText");
+      var container = document.getElementById("RaceAnalysisText");
 
       z.forEach((docs) => {
-        let yy = docs.data(); // Row data for 1
+        let yy = docs.data(); // Row data
 
-        var Text = yy.Text;
-        var Title = yy.Title;
-        container.innerHTML+=('<h4 class="pick">' + Title + '</h4>');
-        container.innerHTML+=('<h5 class="pickAnalysis">' + Text + '</h5>');
-
+        container.innerHTML += '<h4 class="pick">' + yy.Title + "</h4>";
+        container.innerHTML += '<h5 class="pickAnalysis">' + yy.Text + "</h5>";
       });
     }
     display();
-
   },
 };
 </script>
