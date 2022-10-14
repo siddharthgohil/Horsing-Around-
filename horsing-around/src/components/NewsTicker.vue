@@ -1,4 +1,5 @@
 <template>
+
   <div class="news-ticker">
     <div class="ticker-display">
       <div class="news-label">NEWS</div>
@@ -10,6 +11,7 @@
       </transition-group>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -63,9 +65,7 @@ export default {
     );
     this.startTickerTimer();
   },
-  beforeUnmount() {
-    this.stopTickerTimer();
-  },
+ 
   methods: {
     startTickerTimer() {
       this.stopTickerTimer();
