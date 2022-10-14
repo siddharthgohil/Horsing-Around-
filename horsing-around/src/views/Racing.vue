@@ -4,6 +4,7 @@
 <!-- that will trigger change which will refresh the page  -->
 <!-- <JockeyPage :key="refreshComp"/>
 <HorsesPage  @added="change"/> -->
+
 <div class="AllRaces">
   <SideBar/> <!--Should be stored in The RacingCard page-->
   
@@ -13,24 +14,26 @@
 
 </div>
 <!-- <RaceCard/> -->
+<RaceAnalysis/>
+
 
 </template>
 
 
 <script>
+
 // Dependency should be RacingPage - RaceCard
-// import RaceCard from '@/components/RacingPage/RaceCard.vue'
 import SideBar from '@/components/RacingPage/SideBarComponent/Side-Bar.vue'
+import RaceAnalysis from '@/components/RaceAnalysis.vue'
+import RaceCard from '@/components/RaceCard.vue'
 
 
 export default {
   name: 'App',
   components:{
-    // RacingPage,
-    // JockeyPage,
-    // HorsesPage,
-    //RaceCard,
     SideBar
+    RaceCard,
+    RaceAnalysis
   },
   data(){
     return {
