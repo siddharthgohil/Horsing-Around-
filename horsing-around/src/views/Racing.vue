@@ -3,10 +3,11 @@
     <div class="AllRaces">
       <SideBar />
       <div class="content">
-        <RaceCard />
+        <RaceCard/>
       </div>
     </div>
-    <RaceAnalysis />
+    <RaceAnalysis/>
+    <NewsTicker/>
   </div>
 
 </template>
@@ -16,6 +17,7 @@
 import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
 import RaceAnalysis from "@/components/RaceAnalysis.vue";
 import RaceCard from "@/components/RacingPage/RaceCard.vue";
+import NewsTicker from '@/components/NewsTicker.vue'
 
 export default {
   name: "App",
@@ -23,6 +25,8 @@ export default {
     SideBar,
     RaceCard,
     RaceAnalysis,
+    NewsTicker
+
   },
   data() {
     return {
