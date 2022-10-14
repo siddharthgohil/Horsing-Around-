@@ -22,6 +22,7 @@
 </template>
 
 <script>
+//import ChartsGraph from "@/components/Charts.vue"
 import firebaseApp from "../../firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
@@ -74,7 +75,7 @@ export default {
       });
     }
     display();
-  },
+  }
 };
 </script>
 
