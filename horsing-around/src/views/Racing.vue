@@ -1,21 +1,14 @@
 <template>
-  <!-- <RacingPage/> -->
-  <!-- AddCoin page will emit added  -->
-  <!-- that will trigger change which will refresh the page  -->
-  <!-- <JockeyPage :key="refreshComp"/>
-<HorsesPage  @added="change"/> -->
   <div>
     <div class="AllRaces">
       <SideBar />
-      <!--Should be stored in The RacingCard page-->
-
       <div class="content">
         <RaceCard />
       </div>
     </div>
     <RaceAnalysis />
   </div>
-  <!-- <RaceCard/> -->
+
 </template>
 
 <script>
