@@ -12,17 +12,10 @@
     <router-view></router-view>
 
   </div>
-  <ChartsGraph/>
 </template>
 
 <script>
-import ChartsGraph from "@/components/Charts.vue"
-
 export default {
-  name: "App",
-  components: {
-    ChartsGraph
-  }
 };
 </script>
 
