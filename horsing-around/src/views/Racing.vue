@@ -7,6 +7,7 @@
       </div>
     </div>
     <RaceAnalysis/>
+    <RacingPage/>
     <NewsTicker/>
   </div>
 
@@ -17,6 +18,7 @@
 import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
 import RaceAnalysis from "@/components/RaceAnalysis.vue";
 import RaceCard from "@/components/RacingPage/RaceCard.vue";
+import RacingPage from "@/components/RacingPage/RacingPage.vue";
 import NewsTicker from '@/components/NewsTicker.vue'
 
 export default {
@@ -25,7 +27,8 @@ export default {
     SideBar,
     RaceCard,
     RaceAnalysis,
-    NewsTicker
+    NewsTicker,
+    RacingPage
 
   },
   data() {
