@@ -1,6 +1,6 @@
 <template>
-  <line-chart class = "history_positions" width="800px" height="500px" :data="horsedata" 
-  xtitle="Race Number" ytitle="Position" ></line-chart>
+  <line-chart class = "history_positions" width="95%" height="500px" :data="horsedata" 
+  xtitle="Race Number" ytitle="Position" title="Recent Form of Horses" legend="right" ></line-chart>
 
 
 </template>
