@@ -1,4 +1,5 @@
 <template>
+
    <div>
       <button @click="updateMe()">Click to update the Axios Chart</button>
       <area-chart class = 'user' width =500px :data = "chartdata" ></area-chart>
