@@ -1,35 +1,29 @@
 <template>
-  <div class="header">
+  <div class = 'allPages'>
     <div id="nav">
-      <router-link to="/">Racing</router-link> 
-      <router-link to="/horses">Horses</router-link> 
-      <router-link to="/jockey">Jockey</router-link> 
-      <div class = 'login'>
+      <router-link to="/">Racing</router-link> |
+      <router-link to="/horses">Horses</router-link> |
+      <router-link to="/jockey">Jockey</router-link>
+      <div class="login">
         <router-link to="/login">Login</router-link>
       </div>
     </div>
-</div>
-  <router-view />
+    
+    <router-view></router-view>
 
+  </div>
 </template>
 
-
 <script>
-
 export default {
-  name: 'App',
-  // data() {
-  // },
-  // methods: {
-  // },
-
-}
-
+  name: "App",
+};
 </script>
 
-
-
 <style>
+.allPages{
+  background-color: rgb(237, 235, 231);
+}
 #app {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,6 +38,7 @@ export default {
   height: 60px;
   display: inline-block;
   width: 100%;
+
 }
 
 #nav a {
@@ -61,9 +56,10 @@ export default {
   background-color: #F1ECEC;
   color: #750e7e;
   border-radius: 30px;
+
 }
 
-.login{
+.login {
   float: right;
   margin-right: 50px;
 }
