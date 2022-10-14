@@ -47,8 +47,8 @@ export default {
   display: grid;
   grid-template-columns: 1fr 8fr;
   background-color: #6a2889;
-  height: 200vh;
-  width: 100vw;
+  height: max-content;
+  width: 150;
 }
 
 .content {
