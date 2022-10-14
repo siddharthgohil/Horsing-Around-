@@ -3,14 +3,13 @@
     <div class="AllRaces">
       <SideBar />
       <div class="content">
-        <RaceCard/>
+        <RaceCard />
+        <RacingPage />
+        <RaceAnalysis />
+        <NewsTicker />
       </div>
     </div>
-    <RaceAnalysis/>
-    <RacingPage/>
-    <NewsTicker/>
   </div>
-
 </template>
 
 <script>
@@ -19,7 +18,7 @@ import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
 import RaceAnalysis from "@/components/RaceAnalysis.vue";
 import RaceCard from "@/components/RacingPage/RaceCard.vue";
 import RacingPage from "@/components/RacingPage/RacingPage.vue";
-import NewsTicker from '@/components/NewsTicker.vue'
+import NewsTicker from "@/components/NewsTicker.vue";
 
 export default {
   name: "App",
@@ -28,8 +27,7 @@ export default {
     RaceCard,
     RaceAnalysis,
     NewsTicker,
-    RacingPage
-
+    RacingPage,
   },
   data() {
     return {
@@ -49,7 +47,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 8fr;
   background-color: #6a2889;
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
 }
 
