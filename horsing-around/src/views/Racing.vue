@@ -1,65 +1,57 @@
 <template>
-<!-- <RacingPage/> -->
-<!-- AddCoin page will emit added  -->
-<!-- that will trigger change which will refresh the page  -->
-<!-- <JockeyPage :key="refreshComp"/>
-<HorsesPage  @added="change"/> -->
-<div>
-  <NewsTicker/>
-  <RaceCard/>
-  <RaceAnalysis/>
-</div>
+  <div>
+    <div class="AllRaces">
+      <SideBar />
+      <div class="content">
+        <RaceCard/>
+      </div>
+    </div>
+    <RaceAnalysis/>
+    <NewsTicker/>
+  </div>
 
 </template>
 
-
 <script>
-// import RacingPage from '@/components/RacingPage.vue'
-// import JockeyPage from '@/components/JockeyPage.vue'
-import RaceAnalysis from '@/components/RaceAnalysis.vue'
-import RaceCard from '@/components/RaceCard.vue'
+// Dependency should be RacingPage - RaceCard
+import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
+import RaceAnalysis from "@/components/RaceAnalysis.vue";
+import RaceCard from "@/components/RacingPage/RaceCard.vue";
 import NewsTicker from '@/components/NewsTicker.vue'
 
 export default {
-  name: 'App',
-  components:{
-    // RacingPage,
-    // JockeyPage,
-    // HorsesPage,
+  name: "App",
+  components: {
+    SideBar,
     RaceCard,
     RaceAnalysis,
     NewsTicker
-  },
-  data(){
-    return {
-      refreshComp:0
-    }
-  },
-  methods:{
-    change(){
-      this.refreshComp += 1
-    }
-  }
 
-}
+  },
+  data() {
+    return {
+      refreshComp: 0,
+    };
+  },
+  methods: {
+    change() {
+      this.refreshComp += 1;
+    },
+  },
+};
 </script>
 
-
-
 <style scoped>
-#app{
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.AllRaces {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  background-color: #6a2889;
+  height: 100vh;
+  width: 100vw;
 }
 
-#bg{
-  display: "blocl";
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+.content {
+  background-color: #f1ecec;
+  border-radius: 20px;
 }
 </style>
