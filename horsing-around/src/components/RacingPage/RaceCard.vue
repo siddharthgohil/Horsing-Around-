@@ -11,7 +11,7 @@
 import axios from 'axios'
 
 export default{
-   name: 'RaceCard',
+   name: 'RaceCard', 
    data(){
       return{
          chartdata : null
