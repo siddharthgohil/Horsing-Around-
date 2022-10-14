@@ -4,26 +4,34 @@
 <!-- that will trigger change which will refresh the page  -->
 <!-- <JockeyPage :key="refreshComp"/>
 <HorsesPage  @added="change"/> -->
-<div>
-  <RaceCard/>
-  <RaceAnalysis/>
+
+<div class="AllRaces">
+  <SideBar/> <!--Should be stored in The RacingCard page-->
+  
+  <div class="content">
+    This should be the raceCard
+  </div>
+
 </div>
+<!-- <RaceCard/> -->
+<RaceAnalysis/>
+
 
 </template>
 
 
 <script>
-// import RacingPage from '@/components/RacingPage.vue'
-// import JockeyPage from '@/components/JockeyPage.vue'
+
+// Dependency should be RacingPage - RaceCard
+import SideBar from '@/components/RacingPage/SideBarComponent/Side-Bar.vue'
 import RaceAnalysis from '@/components/RaceAnalysis.vue'
 import RaceCard from '@/components/RaceCard.vue'
+
 
 export default {
   name: 'App',
   components:{
-    // RacingPage,
-    // JockeyPage,
-    // HorsesPage,
+    SideBar
     RaceCard,
     RaceAnalysis
   },
@@ -41,22 +49,19 @@ export default {
 }
 </script>
 
-
-
 <style scoped>
-#app{
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .AllRaces {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    background-color: #6A2889;
+    height: 100vh;
+    width: 100vw;
+  }
 
-#bg{
-  display: "blocl";
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
+  .content {
+    background-color: #F1ECEC;
+    border-radius: 20px;
+
+  }
+
 </style>
