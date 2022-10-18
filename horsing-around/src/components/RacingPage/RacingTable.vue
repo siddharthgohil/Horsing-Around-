@@ -29,7 +29,7 @@ import { collection, getDocs } from "firebase/firestore";
 const db = getFirestore(firebaseApp);
 
 export default {
-  name: "RacingPage",
+  name: "RacingTable",
   mounted() {
     async function display() {
       let z = await getDocs(collection(db, "Races"));
