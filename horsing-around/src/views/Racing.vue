@@ -3,7 +3,7 @@
     <div class="AllRaces">
       <SideBar />
       <div class="content">
-        <RaceCard />
+        <RacingPositionsGraph />
         <RacingPage />
         <RaceAnalysis />
         <NewsTicker />
@@ -16,7 +16,7 @@
 // Dependency should be RacingPage - RaceCard
 import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
 import RaceAnalysis from "@/components/RaceAnalysis.vue";
-import RaceCard from "@/components/RacingPage/RaceCard.vue";
+import RacingPositionsGraph from "@/components/RacingPage/RacingPositionsGraph.vue";
 import RacingPage from "@/components/RacingPage/RacingPage.vue";
 import NewsTicker from "@/components/NewsTicker.vue";
 
@@ -24,7 +24,7 @@ export default {
   name: "App",
   components: {
     SideBar,
-    RaceCard,
+    RacingPositionsGraph,
     RaceAnalysis,
     NewsTicker,
     RacingPage,

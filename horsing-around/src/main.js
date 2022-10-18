@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import Chart from 'chart.js/auto'
 import VueChartKick from "vue-chartkick";
+import 'chartjs-adapter-moment';
 
 const app = createApp(App)
   .use(router)
