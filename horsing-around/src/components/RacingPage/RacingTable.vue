@@ -22,13 +22,14 @@
 </template>
 
 <script>
+//import ChartsGraph from "@/components/Charts.vue"
 import firebaseApp from "../../firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 const db = getFirestore(firebaseApp);
 
 export default {
-  name: "RacingPage",
+  name: "RacingTable",
   mounted() {
     async function display() {
       let z = await getDocs(collection(db, "Races"));
@@ -74,7 +75,7 @@ export default {
       });
     }
     display();
-  },
+  }
 };
 </script>
 

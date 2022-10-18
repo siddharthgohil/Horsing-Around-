@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import firebaseApp from "../firebase.js";
+import firebaseApp from "../../firebase";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 
