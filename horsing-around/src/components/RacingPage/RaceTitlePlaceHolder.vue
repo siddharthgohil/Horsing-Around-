@@ -4,12 +4,38 @@
         <h5 class='RaceCard'>Race Card</h5>
         <!-- /Users/lundypang/Desktop/Y4S1/BT3103/Actual Slides/Horsing-Around-/horsing-around/src/assets/images/v-thing.png
         /Users/lundypang/Desktop/Y4S1/BT3103/Actual Slides/Horsing-Around-/horsing-around/src/components/RacingPage/RaceTitlePlaceHolder.vue -->
+        <div class="datepicker">
+            <Datepicker :value="date" @update:modelValue="handleDate" ></Datepicker>
+        </div>
     </div>
 </template>
 
 <script>
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
+import { ref } from 'vue';
+
 export default {
-    name: 'RaceTitlePlaceHolder'
+    name: 'RaceTitlePlaceHolder',
+    setup() {
+        const date = ref();
+
+        // Make sure to check modelData type here https://vue3datepicker.com/api/props/#modelvalue
+        const handleDate = (modelData) => {
+          date.value = modelData;
+          // do something else with the data
+        }
+        
+        
+        return {
+          date, // Used to access the date froom firebase
+          handleDate,
+        }
+    },
+    components: {
+        Datepicker
+    }
+
 }
 </script>
 
@@ -32,5 +58,13 @@ export default {
     margin-top:1%;
     font-weight: 1000;
     margin-left: 1%;
+}
+
+.datepicker {
+    margin-right: 2%;
+    width: 20%;
+    position: relative;
+    float:right;
+    margin-top: 0.2%;
 }
 </style>
