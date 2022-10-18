@@ -1,12 +1,12 @@
 <template>
   <div class = 'allPages'>
     <div id="nav">
+    <img class="siteLogo" src="./assets/images/logo.png">
       <router-link to="/">Racing</router-link> |
       <router-link to="/horses">Horses</router-link> |
       <router-link to="/jockey">Jockey</router-link>
-      <div class="login">
-        <router-link to="/login">Login</router-link>
-      </div>
+      <router-link class='login' to="/login">Login</router-link>
+      
     </div>
     
     <router-view></router-view>
@@ -58,8 +58,26 @@ export default {
 
 }
 
+.siteLogo {
+  float:left;
+  width: 70px;
+  margin-left: 30px;
+}
+
 .login {
   float: right;
   margin-right: 50px;
+  width: 100px;
+  text-align: center;
+  color: white !important;
+  background-color: #750e7e;
+  height: 45px !important;
+  padding-top: 12px !important;
 }
+
+.login:hover {
+  color: black !important;
+  background-color: #954AB8 !important;
+}
+
 </style>
