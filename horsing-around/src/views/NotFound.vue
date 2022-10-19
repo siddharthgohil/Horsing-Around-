@@ -1,8 +1,10 @@
 <template>
-  <NavBar />
-  <h3>Page not Found!!</h3>
-  <h4>Please click on the aobve available options</h4>
-  <LogoutComp />
+  <div>
+    <NavBar />
+    <h3>Page not Found!!</h3>
+    <h4>Please click on the aobve available options</h4>
+    <LogoutComp />
+  </div>
 </template>
 
 <script>
@@ -16,7 +18,7 @@ export default {
     NavBar,
     LogoutComp,
   },
-    data() {
+  data() {
     return {
       user: false,
     };

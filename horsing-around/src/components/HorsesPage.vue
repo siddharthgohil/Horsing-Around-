@@ -1,8 +1,8 @@
 <!-- Add coin page -->
 
 <template>
-  <div class="container">
-    <form id="myform" v-if="user">
+  <div class="containerMain">
+    <form id="myform" >
       <h2>Add Coins</h2>
       <div class="formli">
         <label for="coin1"> Coin Name:</label>
@@ -39,24 +39,11 @@
 import firebaseApp from "../firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 const db = getFirestore(firebaseApp);
 
 export default {
   emits: ["added"],
-  data() {
-    return {
-      user: false,
-    };
-  },
-  mounted() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.user = user;
-      }
-    });
-  },
+
   methods: {
     async savetofs() {
       var a = document.getElementById("coin1").value;
@@ -84,6 +71,9 @@ export default {
 </script>
 
 <style scoped>
+.containerMain{
+  margin-top: 30px
+}
 h2 {
   background-color: rgb(129, 184, 99);
 }
@@ -96,7 +86,6 @@ h2 {
 form {
   text-align: center;
   align-items: center;
-  margin: auto;
 }
 
 input:hover {

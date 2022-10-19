@@ -80,7 +80,6 @@ export default {
 
 <style scoped>
 h1,
-
 .h2 {
   text-align: center;
   background-color: rgb(129, 184, 99);
@@ -103,12 +102,6 @@ tr:nth-child(even) {
   background-color: #e3edee;
 }
 
-th,
-td {
-  border: 1px solid #ddddddd;
-  text-align: center;
-  padding: 8px;
-}
 .bwt {
   color: rgb(243, 236, 236);
   background-color: rgb(255, 94, 0);
