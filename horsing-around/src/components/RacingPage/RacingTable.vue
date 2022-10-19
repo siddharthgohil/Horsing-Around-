@@ -80,23 +80,20 @@ export default {
 </script>
 
 <style scoped>
-h1,
-h2 {
-  text-align: center;
-  background-color: rgb(129, 184, 99);
-  font: 700;
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+h1 {
+  margin: 40px;
+  padding: 30px;
+  background-color: whitesmoke;
+  text-align: left;
+  font-size: 2em;   
 }
 
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 94%;
+  padding: 30px;
+  margin: 40px;
 }
 
 tr:nth-child(even) {
@@ -105,9 +102,10 @@ tr:nth-child(even) {
 
 th,
 td {
-  border: 1px solid #ddddddd;
+  border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
+  background-color:whitesmoke;
 }
 .bwt {
   color: rgb(243, 236, 236);
