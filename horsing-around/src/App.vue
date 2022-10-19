@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     change() {
-      console.log('wors')
+      console.log("wors");
       this.refreshComp += 1;
     },
   },

@@ -1,17 +1,19 @@
 <template>
-
   <div class="news-ticker">
     <div class="ticker-display">
       <div class="news-label">NEWS</div>
-      <NewsTickerItem :key="currentNewsItem.id" :value="currentNewsItem"/>
+      <NewsTickerItem :key="currentNewsItem.id" :value="currentNewsItem" />
     </div>
     <div class="all-news-popup">
       <transition-group>
-        <NewsTickerItem v-for="item in allNewsItems" :key="item.id" :value="item"/>
+        <NewsTickerItem
+          v-for="item in allNewsItems"
+          :key="item.id"
+          :value="item"
+        />
       </transition-group>
     </div>
   </div>
-  
 </template>
 
 <script>
@@ -20,7 +22,7 @@ import { clearInterval } from "timers";
 let id = 1;
 export default {
   components: {
-    NewsTickerItem
+    NewsTickerItem,
   },
   data() {
     return {
@@ -31,33 +33,33 @@ export default {
           id: id++,
           text: "Men With Higher IQ More Likely to Bet on Horse Racing",
           date: "13/10/2022",
-          url: "https://neurosciencenews.com/iq-horse-betting-21631/"
+          url: "https://neurosciencenews.com/iq-horse-betting-21631/",
         },
         {
           id: id++,
           text: "MRT station will affect heritage of former Bukit Timah Turf Club but area's value can be retained: Report",
           date: "14/10/2022",
-          url: "https://www.straitstimes.com/singapore/transport/mrt-station-will-affect-heritage-of-former-bukit-timah-turf-club-but-areas-value-can-be-retained-report"
+          url: "https://www.straitstimes.com/singapore/transport/mrt-station-will-affect-heritage-of-former-bukit-timah-turf-club-but-areas-value-can-be-retained-report",
         },
         {
           id: id++,
           text: "Singapore Turf Club to reopen to live spectators for the first time in 2 years",
           date: "25/4/2022",
-          url: "https://www.channelnewsasia.com/singapore/singapore-turf-club-reopen-live-horse-racing-spectators-covid-19-2645301"
+          url: "https://www.channelnewsasia.com/singapore/singapore-turf-club-reopen-live-horse-racing-spectators-covid-19-2645301",
         },
         {
           id: id++,
           text: "Horse racing: Sumomomomomomomomo, the horse 'that makes race commentators cry' earns maiden win in Japan",
           date: "2/11/2021",
-          url: "https://www.straitstimes.com/sport/horse-racing-sumomomomomomomomo-the-horse-that-makes-race-commentators-cry-earns-maiden-win-in"
-        }
-      ]
+          url: "https://www.straitstimes.com/sport/horse-racing-sumomomomomomomomo-the-horse-that-makes-race-commentators-cry-earns-maiden-win-in",
+        },
+      ],
     };
   },
   computed: {
     currentNewsItem() {
       return this.allNewsItems[this.currentNewsIndex];
-    }
+    },
   },
   mounted() {
     this.currentNewsIndex = Math.round(
@@ -65,7 +67,7 @@ export default {
     );
     this.startTickerTimer();
   },
- 
+
   methods: {
     startTickerTimer() {
       this.stopTickerTimer();
@@ -78,8 +80,8 @@ export default {
     timerTick() {
       this.currentNewsIndex =
         (this.currentNewsIndex + 1) % this.allNewsItems.length;
-    }
-  }
+    },
+  },
 };
 </script>
 

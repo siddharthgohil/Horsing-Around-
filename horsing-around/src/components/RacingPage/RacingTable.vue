@@ -98,10 +98,10 @@ export default {
   margin-top: 0.7%;
 }
 .RaceTable {
-    float:left;
-    margin-top:1%;
-    font-weight: 1000;
-    margin-left: 1%;
+  float: left;
+  margin-top: 1%;
+  font-weight: 1000;
+  margin-left: 1%;
 }
 
 table {

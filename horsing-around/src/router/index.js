@@ -4,8 +4,8 @@ import RacingPage from "@/views/Racing.vue";
 import JockeyPage from "@/views/Jockey.vue";
 import HorsesPage from "@/views/Horses.vue";
 import LoginComp from "@/components/LoginComp";
-import NotFound from '@/views/NotFound'
-import ProfilePage from '@/views/Profile'
+import NotFound from "@/views/NotFound";
+import ProfilePage from "@/views/Profile";
 
 const routes = [
   {

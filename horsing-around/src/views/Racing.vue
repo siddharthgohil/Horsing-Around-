@@ -3,7 +3,7 @@
     <div class="AllRaces">
       <SideBar />
       <div class="content">
-        <RaceTitlePlaceHolder/>
+        <RaceTitlePlaceHolder />
         <RacingPositionsGraph />
         <RacingTable />
         <RaceAnalysis />
