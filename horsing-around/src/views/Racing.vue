@@ -3,6 +3,7 @@
     <div class="AllRaces">
       <SideBar />
       <div class="content">
+        <RaceTitlePlaceHolder/>
         <RacingPositionsGraph />
         <RacingTable />
         <RaceAnalysis />
@@ -15,6 +16,7 @@
 <script>
 // Dependency should be RacingPage - RaceCard
 import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
+import RaceTitlePlaceHolder from "@/components/RacingPage/RaceTitlePlaceHolder.vue";
 import RaceAnalysis from "@/components/RacingPage/RaceAnalysis.vue";
 import RacingPositionsGraph from "@/components/RacingPage/RacingPositionsGraph.vue";
 import RacingTable from "@/components/RacingPage/RacingTable.vue";
@@ -26,6 +28,7 @@ export default {
     SideBar,
     RacingPositionsGraph,
     RaceAnalysis,
+    RaceTitlePlaceHolder,
     NewsTicker,
     RacingTable,
   },
