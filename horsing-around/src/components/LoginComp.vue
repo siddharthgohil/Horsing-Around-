@@ -1,13 +1,13 @@
 <template>
   <div style = 'text-align:center;'>
-    <h1 id = 'mainHead'>CRYPTO PAPER PORTFOLIO</h1>
+    <h1 id = 'mainHead'>HORSING AROUND</h1>
     <div id = 'firebaseui-auth-container'></div>
     <div id = 'pagecontent'>
-        Crypto Paper Portfolio is an app to track your Crypto Portfolio<br>
-        Enter coin details and get real time profit and loss update of your Portfolio.
+        HORSE HORSE HORSE<br>
+        SIGN IN TO VIEW HORSE STUFF
     </div>
     <img id = 'bg' src="@/assets/logo.png" alt="" class="center">
-    <h5>copyright@cpp-2022</h5>
+    <h5>copyright@NUS-2022</h5>
   </div>
 </template>
 
@@ -61,7 +61,7 @@ export default {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 20%;
 }
 h5{
     text-align: center;
