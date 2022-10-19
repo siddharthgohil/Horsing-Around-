@@ -1,6 +1,6 @@
 <template>
   <div style="text-align: center" v-if="user">
-    <div>
+    <div id = "logodiv">
         <img src="@/assets/logo.png" alt="" style="width:175px; height:175px;border:4px solid#333">
     </div>
     <div>
@@ -39,4 +39,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#logodiv{
+  margin: 20px;
+}
+</style>

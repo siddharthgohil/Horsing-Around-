@@ -1,14 +1,12 @@
 <template>
-  <div >
-    <div id="nav">
-      <img id="navlogo" src="@/assets/logo.png" />
-      <router-link to="/">Racing</router-link> |
-      <router-link to="/horses">Horses</router-link> |
-      <router-link to="/jockey">Jockey</router-link>
-      <div class="login">
-        <router-link to="/Profile" v-if="user">Profile</router-link>
-        <router-link to="/Login" v-else>Login</router-link>
-      </div>
+  <div id="nav">
+    <img id="navlogo" src="@/assets/logo.png" />
+    <router-link to="/">Racing</router-link> |
+    <router-link to="/horses">Horses</router-link> |
+    <router-link to="/jockey">Jockey</router-link>
+    <div class="login">
+      <router-link to="/Profile" v-if="user">Profile</router-link>
+      <router-link to="/Login" v-else>Login</router-link>
     </div>
   </div>
 </template>
@@ -44,10 +42,9 @@ export default {
 }
 .login {
   float: right;
-  margin-right: 50px;
 }
 #app {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -66,14 +63,13 @@ export default {
   text-decoration: none;
   color: #2e3e50;
   display: inline-block;
-  width: 8%;
+  width: 80px;
   margin: 0px 1%;
   height: 70px;
 }
 #nav a.router-link-exact-active {
-  background-color: #F1ECEC;
+  background-color: #f1ecec;
   color: #750e7e;
   border-radius: 30px;
 }
-
 </style>

@@ -20,13 +20,14 @@ export default {
     async function display() {
       let z = await getDocs(collection(db, "RachingAnalysisText"));
       var container = document.getElementById("RaceAnalysisText");
-
-      z.forEach((docs) => {
-        let yy = docs.data(); // Row data
-
-        container.innerHTML += '<h4 class="pick">' + yy.Title + "</h4>";
-        container.innerHTML += '<h5 class="pickAnalysis">' + yy.Text + "</h5>";
-      });
+      if (container != null) {
+        z.forEach((docs) => {
+          let yy = docs.data(); // Row data
+          container.innerHTML += '<h4 class="pick">' + yy.Title + "</h4>";
+          container.innerHTML +=
+            '<h5 class="pickAnalysis">' + yy.Text + "</h5>";
+        });
+      }
     }
     display();
   },
