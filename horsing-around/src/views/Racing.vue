@@ -29,16 +29,6 @@ export default {
     NewsTicker,
     RacingTable,
   },
-  data() {
-    return {
-      refreshComp: 0,
-    };
-  },
-  methods: {
-    change() {
-      this.refreshComp += 1;
-    },
-  },
 };
 </script>
 
