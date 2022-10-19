@@ -10,18 +10,23 @@
         Provider: <strong>{{user.providerData[0].providerId}}</strong>
         </p>
     </div>
-    <LogoutComp />
+    <LogoutComp @added="change"/>
+  </div>
+  <div v-else>
+    <LoginComp/>
   </div>
 </template>
 
 <script>
 import LogoutComp from "@/components/LogoutComp.vue";
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import LoginComp from "@/components/LoginComp";
 
 export default {
   name: "ProfilePage",
   components: {
     LogoutComp,
+    LoginComp
   },
   data() {
     return {
@@ -36,6 +41,11 @@ export default {
       }
     });
   },
+  methods:{
+    change(){
+      window.location.reload();
+    }
+  }
 };
 </script>
 

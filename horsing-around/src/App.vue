@@ -1,24 +1,34 @@
 <template>
   <div>
     <div class="allPages">
-      <NavBar />
-      <router-view></router-view>
+      <NavBar :key="refreshComp" />
+      <router-view @added="change"></router-view>
     </div>
-
   </div>
 </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue"; 
+import NavBar from "@/components/NavBar.vue";
 export default {
   components: {
-    NavBar
-  }
+    NavBar,
+  },
+  data() {
+    return {
+      refreshComp: 0,
+    };
+  },
+  methods: {
+    change() {
+      console.log('wors')
+      this.refreshComp += 1;
+    },
+  },
 };
 </script>
 
 <style>
-.allPages{
+.allPages {
   background-color: rgb(237, 235, 231);
 }
 </style>

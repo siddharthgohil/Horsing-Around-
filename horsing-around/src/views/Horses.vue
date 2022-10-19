@@ -1,5 +1,5 @@
 <template>
-    <h3>This is Profit Page</h3>
+    <h3>This page is only for users</h3>
     <HorsesPage/>      
 </template>
 
