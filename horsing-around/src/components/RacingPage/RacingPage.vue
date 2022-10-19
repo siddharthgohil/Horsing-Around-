@@ -80,7 +80,8 @@ export default {
 
 <style scoped>
 h1,
-h2 {
+
+.h2 {
   text-align: center;
   background-color: rgb(129, 184, 99);
   font: 700;

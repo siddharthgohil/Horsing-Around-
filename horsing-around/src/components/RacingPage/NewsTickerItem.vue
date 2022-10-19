@@ -37,7 +37,7 @@ export default {
 
 .news-item .text {
   user-select: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 

@@ -43,12 +43,12 @@ export default {
 .raceTitlePlaceholder {
     width: 95%;
     background-color: #fff;
-    height: 3%;
+    height: 50px;
     margin-top: 1.5% !important;
     margin: auto;
 }
 .vthing {
-    height: 50%;
+    height: 30px;
     float: left;
     margin-left: 2%;
     margin-top: 0.7%;

@@ -88,7 +88,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 
 #history_positions{
     margin: 40px;

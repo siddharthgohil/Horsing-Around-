@@ -63,7 +63,7 @@ export default {
   text-decoration: none;
   color: #2e3e50;
   display: inline-block;
-  width: 80px;
+  width: 100px;
   margin: 0px 1%;
   height: 70px;
 }

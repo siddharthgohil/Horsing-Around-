@@ -2,7 +2,11 @@
 
 <template>
   <div>
-    <h1 id="Current">Race Table</h1>
+    <div class="MainHeader">
+      <img class="vthing" src="../../assets/images/v-thing.png" />
+      <h5 class="RaceTable">Race Table</h5>
+    </div>
+
     <table id="table" class="auto-index">
       <tr>
         <th>Colour</th>
@@ -75,17 +79,29 @@ export default {
       });
     }
     display();
-  }
+  },
 };
 </script>
 
 <style scoped>
-h1 {
-  margin: 40px;
-  padding: 30px;
-  background-color: whitesmoke;
-  text-align: left;
-  font-size: 2em;   
+.MainHeader {
+  width: 95%;
+  background-color: #fff;
+  height: 50px;
+  margin-left: 30px;
+  display: flex;
+}
+.vthing {
+  height: 30px;
+  float: left;
+  margin-left: 2%;
+  margin-top: 0.7%;
+}
+.RaceTable {
+    float:left;
+    margin-top:1%;
+    font-weight: 1000;
+    margin-left: 1%;
 }
 
 table {
@@ -105,7 +121,7 @@ td {
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
 }
 .bwt {
   color: rgb(243, 236, 236);

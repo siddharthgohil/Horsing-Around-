@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="MainHeader">
-      <!-- Add image -->
-      <h2 class="HeaderTag">Race Analysis</h2>
+        <img class='vthing' src="../../assets/images/v-thing.png" >
+        <h5 class='RaceAnalysis'>Race Analysis</h5>
     </div>
     <div id="RaceAnalysisText"></div>
   </div>
@@ -23,9 +23,9 @@ export default {
       if (container != null) {
         z.forEach((docs) => {
           let yy = docs.data(); // Row data
-          container.innerHTML += '<h4 class="pick">' + yy.Title + "</h4>";
+          container.innerHTML += '<h5 class="pick">' + yy.Title + "</h5>";
           container.innerHTML +=
-            '<h5 class="pickAnalysis">' + yy.Text + "</h5>";
+            '<p class="pickAnalysis">' + yy.Text + "</p><br/>";
         });
       }
     }
@@ -34,25 +34,35 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .MainHeader {
-  margin: 40px;
-  padding: 30px;
-  background-color: whitesmoke;
+    width: 95%;
+    background-color: #fff;
+    height: 50px;
+    margin-left: 30px;
+    display: flex;
 }
-.HeaderTag {
-  text-align: left;
+.vthing {
+    height: 30px;
+    float: left;
+    margin-left: 2%;
+    margin-top: 0.7%;
 }
-
+.RaceAnalysis {
+    float:left;
+    margin-top:1%;
+    font-weight: 1000;
+    margin-left: 1%;
+}
 #RaceAnalysisText {
-  margin: 40px;
-  padding: 30px;
-  background-color: whitesmoke;
+  margin: 30px;
+  padding: 20px;
+  width: 100%;
+  background-color: #fff;
+  text-align: left;
 }
 .pick {
-  padding-top: 10px;
   text-align: left;
-  font-weight: bold;
 }
 .pickAnalysis {
   text-align: left;
