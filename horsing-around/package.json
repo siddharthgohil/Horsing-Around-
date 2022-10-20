@@ -20,7 +20,6 @@
     "sass-loader": "^13.1.0",
     "vue": "^3.2.13",
     "vue-chartkick": "^1.1.0",
-    "vue-material": "^1.0.0-beta-15",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
