@@ -77,7 +77,7 @@ export default {
 
 <style>
 .news-ticker {
-  background: #ccc2;
+  background: rgba(160, 12, 245, 0.133);
   padding: 5px 5px;
 }
 .news-label {
@@ -85,9 +85,9 @@ export default {
   text-orientation: upright;
   user-select: none;
   font-weight: bold;
-  border-right: 1px solid #0002;
-  padding-right: 15px;
-  padding-left: 5px;
+  border-right: 1px solid #0005;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .ticker-display {
   display: grid;
