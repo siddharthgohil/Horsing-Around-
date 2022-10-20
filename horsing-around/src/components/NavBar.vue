@@ -4,10 +4,10 @@
     <router-link to="/">Racing</router-link> |
     <router-link to="/horses">Horses</router-link> |
     <router-link to="/jockey">Jockey</router-link>
-    <div class="login">
-      <router-link to="/Profile" v-if="user">Profile</router-link>
-      <router-link to="/Login" v-else>Login</router-link>
-    </div>
+
+    <router-link class="loginSegment" to="/Profile" v-if="user">Profile</router-link>
+    <router-link class="loginSegment" to="/Login" v-else>Login</router-link>
+
   </div>
 </template>
 
@@ -34,11 +34,9 @@ export default {
 
 <style>
 #navlogo {
-  width: 35px;
-  height: 35px;
+  width: 70px;
   float: left;
-  margin-left: 50px;
-  margin-top: 10px;
+  margin-left: 20px;
 }
 .login {
   float: right;
@@ -66,6 +64,14 @@ export default {
   width: 100px;
   margin: 0px 1%;
   height: 70px;
+}
+.loginSegment {
+  float: right;
+  display:inline-block;
+  background-color: #750e7e;
+  color:#fff !important;
+  padding-top: 10px !important;
+  height: 40px !important;
 }
 #nav a.router-link-exact-active {
   background-color: #f1ecec;
