@@ -1,6 +1,6 @@
 <template>
   <div class="news-item">
-    <span class="text">{{ value.text }}</span>
+    <span class="text">{{ value.title }}</span>
     <a
       v-if="value.url"
       class="go-link"

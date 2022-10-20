@@ -2,12 +2,12 @@
   <div class="news-ticker">
     <div class="ticker-display">
       <div class="news-label">NEWS</div>
-      <NewsTickerItem :key="currentNewsItem.id" :value="currentNewsItem" />
+      <NewsTickerItem v-if = currentNewsItem :key="currentNewsItem.id" :value="currentNewsItem" />
     </div>
     <div class="all-news-popup">
       <transition-group>
         <NewsTickerItem
-          v-for="item in allNewsItems"
+          v-for="item in NewsPosts"
           :key="item.id"
           :value="item"
         />
@@ -19,12 +19,17 @@
 <script>
 import NewsTickerItem from "./NewsTickerItem";
 import { clearInterval } from "timers";
-let id = 1;
+import firebaseApp from "../../firebase";
+import { getFirestore } from "firebase/firestore";
+import { query, collection, getDocs } from "firebase/firestore"
+
+const db = getFirestore(firebaseApp);
+//let id = 1;
 export default {
   components: {
     NewsTickerItem,
   },
-  data() {
+  /**data() {
     return {
       currentNewsIndex: 0,
       intervalId: null,
@@ -55,20 +60,50 @@ export default {
         },
       ],
     };
+  },**/
+
+  data() {
+    return {
+      currentNewsIndex: 0,
+      intervalId: null,
+      NewsPosts: []
+    }
+  }, 
+  created() {
+    this.getNewsPosts()
   },
+  methods: {
+    async getNewsPosts() {
+      const querySnap = await getDocs(query(collection(db, 'NewsPosts')));
+      querySnap.forEach((doc) => {
+        this.NewsPosts.push(doc.data())
+      })
+    },
+    startTickerTimer() {
+      this.stopTickerTimer();
+      this.intervalId = setInterval(this.timerTick, 10000);
+    },
+    stopTickerTimer() {
+      if (this.intervalId) clearInterval(this.intervalId);
+      this.intervalId = null;
+    },
+    timerTick() {
+      this.currentNewsIndex =
+        (this.currentNewsIndex + 1) % this.NewsPosts.length;
+    },
+  },
+  
   computed: {
     currentNewsItem() {
-      return this.allNewsItems[this.currentNewsIndex];
+      return this.NewsPosts[this.currentNewsIndex];
     },
   },
   mounted() {
-    this.currentNewsIndex = Math.round(
-      Math.random() * (this.allNewsItems.length - 1)
-    );
+    this.currentNewsIndex = 0;
     this.startTickerTimer();
   },
 
-  methods: {
+  /**methods: {
     startTickerTimer() {
       this.stopTickerTimer();
       this.intervalId = setInterval(this.timerTick, 10000);
@@ -81,7 +116,7 @@ export default {
       this.currentNewsIndex =
         (this.currentNewsIndex + 1) % this.allNewsItems.length;
     },
-  },
+  },**/
 };
 </script>
 
