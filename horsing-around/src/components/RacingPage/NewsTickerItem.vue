@@ -1,6 +1,6 @@
 <template>
   <div class="news-item">
-    <span class="text">{{ value.text }}</span>
+    <span class="text">{{ value.title }}</span>
     <a
       v-if="value.url"
       class="go-link"
@@ -37,7 +37,7 @@ export default {
 
 .news-item .text {
   user-select: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -52,12 +52,12 @@ export default {
 
 .news-item .go-link {
   --arrow-slant: 30deg;
-  --arrow-hightness: 12px;
-  --arrow-thiccness: 4px;
+  --arrow-hightness: 20px;
+  --arrow-thiccness: 20px;
   --gap-offset: 3px;
   border-left: 1px solid #0002;
   display: inline-grid;
-  width: 32px;
+  width: 50px;
   height: 100%;
   place-content: center;
   text-decoration: none;
@@ -69,7 +69,7 @@ export default {
 }
 
 .news-item .go-link:hover {
-  background: #0001;
+  background: rgba(2, 0, 0, 0.295);
 }
 .news-item .go-link:active {
   background: #0002;
