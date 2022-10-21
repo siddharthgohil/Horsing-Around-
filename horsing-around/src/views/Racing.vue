@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="AllRaces">
-      <SideBar />
+      <SideBar @changeRace="display($event)" />
       <div class="content">
         <RaceTitlePlaceHolder />
-        <RacingPositionsGraph />
+        <RacingPositionsGraph :getChartData="getChartData" ref="positions"/>
         <RacingTable />
-        <RaceAnalysis />
+        <RaceAnalysis :raceNum="raceNum" />
         <NewsTicker />
       </div>
     </div>
@@ -22,6 +22,12 @@ import RacingPositionsGraph from "@/components/RacingPage/RacingPositionsGraph.v
 import RacingTable from "@/components/RacingPage/RacingTable.vue";
 import NewsTicker from "@/components/RacingPage/NewsTicker.vue";
 
+import firebaseApp from "../firebase";
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+
+const db = getFirestore(firebaseApp);
+
 export default {
   name: "App",
   components: {
@@ -31,6 +37,68 @@ export default {
     RaceTitlePlaceHolder,
     NewsTicker,
     RacingTable,
+  },
+  data() {
+    return {
+      raceNum: 1,
+    };
+  },
+  mounted() {
+    this.display(1);
+  },
+  methods: {
+    async display(raceNum) {
+      this.changeRaceAnalysis(raceNum)
+      this.getChartData()
+    },
+    async changeRaceAnalysis(raceNum){
+      this.raceNum = raceNum;
+      let z = await getDocs(
+        collection(db, "RacingAnalysisText_" + String(raceNum))
+      );
+      var container = document.getElementById("RaceAnalysisText");
+      if (container != null) {
+        container.innerHTML = "";
+        z.forEach((docs) => {
+          let yy = docs.data(); // Row data
+          container.innerHTML += '<h5 class="pick">' + yy.Title + "</h5>";
+          container.innerHTML +=
+            '<p class="pickAnalysis">' + yy.Text + "</p><br/>";
+        });
+      }
+    },
+    async getChartData(){
+      var z = await getDocs(collection(db, "Previous_Positions_" + this.raceNum));
+      var counter = 0;
+      var chartData2 = { labels: [], datasets: [] };
+      var backgroundColors = [
+        "green",
+        "blue",
+        "red",
+        "yellow",
+        "grey",
+        "orange",
+      ];
+      z.forEach((docs) => {
+        let yy = docs.data(); // Row data
+        chartData2.labels.push(counter + 1 + " Day ago");
+        chartData2.datasets.push({
+          label: yy["name"],
+          backgroundColor: backgroundColors[counter],
+          borderColor: backgroundColors[counter],
+          data: [
+            yy["1RaceAgo"],
+            yy["2RaceAgo"],
+            yy["3RaceAgo"],
+            yy["4RaceAgo"],
+            yy["5RaceAgo"],
+            yy["6RaceAgo"],
+          ],
+        });
+        counter++;
+      });
+      this.$refs.positions.chartData = chartData2;
+    }
   },
 };
 </script>

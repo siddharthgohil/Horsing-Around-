@@ -2,34 +2,19 @@
   <div>
     <div class="MainHeader">
       <img class="vthing" src="../../assets/images/v-thing.png" />
-      <h5 class="RaceAnalysis">Race Analysis</h5>
+      <h5 class="RaceAnalysis">Race Analysis {{raceNum}}</h5>
     </div>
-    <div id="RaceAnalysisText"></div>
+    <div id="RaceAnalysisText">
+    </div>
   </div>
 </template>
 
 <script>
-import firebaseApp from "../../firebase";
-import { getFirestore } from "firebase/firestore";
-import { collection, getDocs } from "firebase/firestore";
 
-const db = getFirestore(firebaseApp);
 export default {
   name: "RaceAnalysis",
-  created() {
-    async function display() {
-      let z = await getDocs(collection(db, "RachingAnalysisText"));
-      var container = document.getElementById("RaceAnalysisText");
-      if (container != null) {
-        z.forEach((docs) => {
-          let yy = docs.data(); // Row data
-          container.innerHTML += '<h5 class="pick">' + yy.Title + "</h5>";
-          container.innerHTML +=
-            '<p class="pickAnalysis">' + yy.Text + "</p><br/>";
-        });
-      }
-    }
-    display();
+  props:{
+    raceNum: Number
   },
 };
 </script>
