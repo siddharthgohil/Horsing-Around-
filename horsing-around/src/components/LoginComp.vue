@@ -1,14 +1,12 @@
 <template>
-  <div style="text-align: center">
-    <h1 id="mainHead">HORSING AROUND</h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="pagecontent">
-      HORSE HORSE HORSE<br />
-      SIGN IN TO VIEW HORSE STUFF
-    </div>
+<div class="container">
+  <div id="loginSegment" style="text-align: center">
     <img id="bg" src="@/assets/logo.png" alt="" class="center" />
-    <h5>copyright@NUS-2022</h5>
-  </div>
+    <!-- <h3 id="mainHead">HORSING AROUND</h3> -->
+    <p class="phtext">Sign in with the following Options:</p>
+    <div id="firebaseui-auth-container"></div>
+  </div>  
+</div>
 </template>
 
 <script>
@@ -40,9 +38,25 @@ export default {
 </script>
 
 <style scoped>
+.container{
+  height: 100% !important;
+  min-height: 88vh;
+}
+.phtext {
+margin-top: 5%;
+font-weight: 1000;
+}
+#loginSegment {
+  background: #fff;
+  width: 30%;
+  margin: auto;
+  margin-top: 5%;
+}
+
 #firebaseui-auth-container {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
+  padding-bottom: 30px;
 }
 #pagecontent {
   height: 100px;
@@ -58,7 +72,8 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 40%;
+  padding-top: 10%;
 }
 h5 {
   text-align: center;
