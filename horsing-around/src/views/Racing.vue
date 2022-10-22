@@ -74,12 +74,12 @@ export default {
       var counter = 0;
       var chartData2 = { labels: [], datasets: [] };
       var backgroundColors = [
-        "green",
-        "blue",
-        "red",
-        "yellow",
-        "grey",
-        "orange",
+        "#FF595E",
+        "#FFCA3A",
+        "#8AC926",
+        "#1982C4",
+        "#6A4C93",
+        "#5D929E",
       ];
       z.forEach((docs) => {
         let yy = docs.data(); // Row data

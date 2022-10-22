@@ -38,6 +38,7 @@ export default {
             title: {
               display: true,
               padding: 10,
+              color: 'black',
               text: "Position",
               font: {
                 size: 20,
@@ -50,6 +51,7 @@ export default {
               display: true,
               padding: 10,
               text: "Race Number",
+              color: 'black',
               font: {
                 size: 20,
                 weight: "bold",
@@ -61,6 +63,7 @@ export default {
           title: {
             display: true,
             text: "Recent Form of Horses",
+            color: 'black',
             font: {
               size: 24,
             },
