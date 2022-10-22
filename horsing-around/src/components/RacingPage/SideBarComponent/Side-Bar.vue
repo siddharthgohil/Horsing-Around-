@@ -1,24 +1,24 @@
 <template>
-    <div class="sidebar">
+    <div id="sidebar">
         <div class="menu-items">
             <!-- Stores the number of race of the day -->
             <router-link to='/' class="side-btn" active-class="active" >
-                <button class="link-container side-btn-active">
+                <button id = "Race1" class="link-container side-btn-active" v-on:click= "changeRace(1)">
                     Race 1
                 </button>
             </router-link>
             <router-link to='/' class="side-btn" active-class="active" >
-                <button class="link-container">
+                <button id = "Race2" class="link-container" v-on:click= "changeRace(2)">
                     Race 2
                 </button>
             </router-link>
             <router-link to='/' class="side-btn" active-class="active" >
-                <button class="link-container">
+                <button id = "Race3" class="link-container" v-on:click= "changeRace(3)">
                     Race 3
                 </button>
             </router-link>
             <router-link to='/' class="side-btn" active-class="active" >
-                <button class="link-container">
+                <button id = "Race4" class="link-container" v-on:click= "changeRace(4)">
                     Race 4
                 </button>
             </router-link>
@@ -30,6 +30,20 @@
 <script>
 export default {
     name: 'Side-Bar',
+    methods:{
+        changeRace(raceNum){
+            this.$emit('changeRace', raceNum)
+             for (let i = 1; i < 5; i++) {
+                if (i != raceNum){
+                    document.getElementById("Race"+String(i)).classList.remove("side-btn-active")
+                }
+                else{
+                    document.getElementById("Race"+String(i)).classList.add("side-btn-active")
+                }
+             }
+            
+        }
+    }
 }
 </script>
 

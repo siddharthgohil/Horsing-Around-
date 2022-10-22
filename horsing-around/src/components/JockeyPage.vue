@@ -131,5 +131,4 @@ table {
 tr:nth-child(even) {
   background-color: #e3edee;
 }
-
 </style>

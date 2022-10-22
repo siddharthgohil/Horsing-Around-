@@ -4,7 +4,7 @@
   <div>
     <div class="MainHeader">
       <img class="vthing" src="../../assets/images/v-thing.png" />
-      <h5 class="RaceTable">Race Table</h5>
+      <h5 class="RaceTable">Race Table for Race {{ raceNum }}</h5>
     </div>
 
     <table id="table" class="auto-index">
@@ -34,6 +34,9 @@ const db = getFirestore(firebaseApp);
 
 export default {
   name: "RacingTable",
+  props: {
+    raceNum: Number,
+  },
   mounted() {
     async function display() {
       let z = await getDocs(collection(db, "Races"));

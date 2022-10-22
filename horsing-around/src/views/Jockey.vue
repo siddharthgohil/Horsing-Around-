@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-.contiainerMain{
-    margin-top: 20px;
+.contiainerMain {
+  margin-top: 20px;
 }
 </style>

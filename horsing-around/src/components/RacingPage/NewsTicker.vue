@@ -2,7 +2,11 @@
   <div class="news-ticker">
     <div class="ticker-display">
       <div class="news-label">NEWS</div>
-      <NewsTickerItem v-if = currentNewsItem :key="currentNewsItem.id" :value="currentNewsItem" />
+      <NewsTickerItem
+        v-if="currentNewsItem"
+        :key="currentNewsItem.id"
+        :value="currentNewsItem"
+      />
     </div>
     <div class="all-news-popup">
       <transition-group>
@@ -21,7 +25,7 @@ import NewsTickerItem from "./NewsTickerItem";
 import { clearInterval } from "timers";
 import firebaseApp from "../../firebase";
 import { getFirestore } from "firebase/firestore";
-import { query, collection, getDocs } from "firebase/firestore"
+import { query, collection, getDocs } from "firebase/firestore";
 
 const db = getFirestore(firebaseApp);
 
@@ -29,24 +33,23 @@ export default {
   components: {
     NewsTickerItem,
   },
- 
 
   data() {
     return {
       currentNewsIndex: 0,
       intervalId: null,
-      NewsPosts: []
-    }
-  }, 
+      NewsPosts: [],
+    };
+  },
   created() {
-    this.getNewsPosts()
+    this.getNewsPosts();
   },
   methods: {
     async getNewsPosts() {
-      const querySnap = await getDocs(query(collection(db, 'NewsPosts')));
+      const querySnap = await getDocs(query(collection(db, "NewsPosts")));
       querySnap.forEach((doc) => {
-        this.NewsPosts.push(doc.data())
-      })
+        this.NewsPosts.push(doc.data());
+      });
     },
     startTickerTimer() {
       this.stopTickerTimer();
@@ -61,7 +64,7 @@ export default {
         (this.currentNewsIndex + 1) % this.NewsPosts.length;
     },
   },
-  
+
   computed: {
     currentNewsItem() {
       return this.NewsPosts[this.currentNewsIndex];
@@ -71,7 +74,6 @@ export default {
     this.currentNewsIndex = 0;
     this.startTickerTimer();
   },
-
 };
 </script>
 
