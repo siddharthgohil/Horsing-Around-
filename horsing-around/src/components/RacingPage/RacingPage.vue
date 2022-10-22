@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <h1 id="Current">Race Table</h1>
+    <h1 id="Current">Race Table for Race {{ raceNum }}</h1>
     <table id="table" class="auto-index">
       <tr>
         <th>Colour</th>
@@ -29,6 +29,9 @@ const db = getFirestore(firebaseApp);
 
 export default {
   name: "RacingPage",
+  props: {
+    raceNum: Number,
+  },
   mounted() {
     async function display() {
       let z = await getDocs(collection(db, "Races"));

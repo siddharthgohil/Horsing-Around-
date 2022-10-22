@@ -5,9 +5,10 @@
     <router-link to="/horses">Horses</router-link> |
     <router-link to="/jockey">Jockey</router-link>
 
-    <router-link class="loginSegment" to="/Profile" v-if="user">Profile</router-link>
+    <router-link class="loginSegment" to="/Profile" v-if="user"
+      >Profile</router-link
+    >
     <router-link class="loginSegment" to="/Login" v-else>Login</router-link>
-
   </div>
 </template>
 
@@ -68,7 +69,7 @@ export default {
 .loginSegment {
   float: right;
   background-color: #750e7e;
-  color:#fff !important;
+  color: #fff !important;
   padding-top: 10px !important;
   height: 40px !important;
 }

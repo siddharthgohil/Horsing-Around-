@@ -2,7 +2,7 @@
 
 <template>
   <div class="containerMain">
-    <form id="myform" >
+    <form id="myform">
       <h2>Add Coins</h2>
       <div class="formli">
         <label for="coin1"> Coin Name:</label>
@@ -71,8 +71,8 @@ export default {
 </script>
 
 <style scoped>
-.containerMain{
-  margin-top: 30px
+.containerMain {
+  margin-top: 30px;
 }
 h2 {
   background-color: rgb(129, 184, 99);

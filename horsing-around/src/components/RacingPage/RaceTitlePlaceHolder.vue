@@ -1,7 +1,7 @@
 <template>
   <div class="raceTitlePlaceholder">
     <img class="vthing" src="../../assets/images/v-thing.png" />
-    <h5 class="RaceCard">Race Card for Race {{raceNum}}</h5>
+    <h5 class="RaceCard">Race Card for Race {{ raceNum }}</h5>
     <!-- /Users/lundypang/Desktop/Y4S1/BT3103/Actual Slides/Horsing-Around-/horsing-around/src/assets/images/v-thing.png
         /Users/lundypang/Desktop/Y4S1/BT3103/Actual Slides/Horsing-Around-/horsing-around/src/components/RacingPage/RaceTitlePlaceHolder.vue -->
     <div class="datepicker">

@@ -2,18 +2,17 @@
   <div>
     <div class="MainHeader">
       <img class="vthing" src="../../assets/images/v-thing.png" />
-      <h5 class="RaceAnalysis">Race Analysis for Race {{raceNum}}</h5>
+      <h5 class="RaceAnalysis">Race Analysis for Race {{ raceNum }}</h5>
     </div>
     <div id="RaceAnalysisText"></div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "RaceAnalysis",
-  props:{
-    raceNum: Number
+  props: {
+    raceNum: Number,
   },
 };
 </script>

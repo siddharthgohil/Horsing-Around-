@@ -3,9 +3,9 @@
     <div class="AllRaces">
       <SideBar @changeRace="display($event)" />
       <div class="content">
-        <RaceTitlePlaceHolder :raceNum="raceNum"/>
-        <RacingPositionsGraph ref="positions"/>
-        <RacingTable :raceNum="raceNum"/>
+        <RaceTitlePlaceHolder :raceNum="raceNum" />
+        <RacingPositionsGraph ref="positions" />
+        <RacingTable :raceNum="raceNum" />
         <RaceAnalysis :raceNum="raceNum" />
         <NewsTicker />
       </div>
@@ -44,14 +44,14 @@ export default {
   },
   mounted() {
     this.display(1);
-    this.getChartData(1)
+    this.getChartData(1);
   },
   methods: {
-    async display(raceNum) {
-      this.changeRaceAnalysis(raceNum)
-      this.getChartData()
+    display(raceNum) {
+      this.changeRaceAnalysis(raceNum);
+      this.getChartData(raceNum);
     },
-    async changeRaceAnalysis(raceNum){
+    async changeRaceAnalysis(raceNum) {
       this.raceNum = raceNum;
       let z = await getDocs(
         collection(db, "RacingAnalysisText_" + String(raceNum))
@@ -67,8 +67,10 @@ export default {
         });
       }
     },
-    async getChartData(){
-      var z = await getDocs(collection(db, "Previous_Positions_" + this.raceNum));
+    async getChartData(raceNum) {
+      var z = await getDocs(
+        collection(db, "Previous_Positions_" + raceNum)
+      );
       var counter = 0;
       var chartData2 = { labels: [], datasets: [] };
       var backgroundColors = [
@@ -98,7 +100,7 @@ export default {
         counter++;
       });
       this.$refs.positions.chartData = chartData2;
-    }
+    },
   },
 };
 </script>
