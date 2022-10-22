@@ -22,7 +22,9 @@ export default {
 
         // Make sure to check modelData type here https://vue3datepicker.com/api/props/#modelvalue
         const handleDate = (modelData) => {
+          
           date.value = modelData;
+          alert(date.value)
           // do something else with the data
         }
         
