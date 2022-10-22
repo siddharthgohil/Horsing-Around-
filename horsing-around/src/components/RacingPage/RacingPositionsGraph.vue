@@ -35,6 +35,12 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: true,
+        scales: {
+          y2: {
+            position: "left",
+            reverse: true,
+          },
+        },
       },
     };
   },

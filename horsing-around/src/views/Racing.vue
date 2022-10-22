@@ -88,6 +88,7 @@ export default {
           label: yy["name"],
           backgroundColor: backgroundColors[counter],
           borderColor: backgroundColors[counter],
+          yAxisID: 'y2',
           data: [
             yy["1RaceAgo"],
             yy["2RaceAgo"],
