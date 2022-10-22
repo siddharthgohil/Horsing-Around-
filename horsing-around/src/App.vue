@@ -30,6 +30,6 @@ export default {
 <style>
 .allPages {
   background-color:#f1ecec; /*rgb(237, 235, 231);*/
-  
+  height: 100vh;
 }
 </style>

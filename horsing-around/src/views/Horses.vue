@@ -1,23 +1,27 @@
 <template>
-  <div v-if="user">
-    <HorsesPage />
-    <JockeyPage />
+  <div class="HorseBG" v-if="user">
+      <div class="AllHorses">
+        <SideBarHorse/>
+        <div class="content">
+          <HorsesPage/>
+        </div>
+      </div>
   </div>
-  <div v-else>
+  <div class="HorseBG" v-else>
     <h3>This page is only for logged in members</h3>
   </div>
 </template>
 
 <script>
-import HorsesPage from "@/components/HorsesPage.vue";
-import JockeyPage from "@/components/JockeyPage.vue";
+import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
+import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
-  name: "OnlyProfit",
+  name: "HorseView",
   components: {
     HorsesPage,
-    JockeyPage,
+    SideBarHorse
   },
   data() {
     return {
@@ -34,3 +38,22 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+.AllHorses {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  background-color: #6a2889;
+  height: 100%;
+  width: 150;
+}
+.HorseBG {
+  height: 100vh;
+}
+
+.content {
+  background-color: #f1ecec;
+  border-radius: 20px;
+}
+</style>
