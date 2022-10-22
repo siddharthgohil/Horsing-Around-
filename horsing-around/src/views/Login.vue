@@ -1,13 +1,17 @@
 <template>
-  <LoginPage />
+  <LoginComp />
 </template>
 
 <script>
-import LoginPage from "@/components/Login.vue";
+import LoginComp from "@/components/LoginComp.vue";
 export default {
   name: "LoginView",
   components: {
-    LoginPage,
+    LoginComp,
   },
 };
 </script>
+
+<style scoped>
+
+</style>

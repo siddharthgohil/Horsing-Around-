@@ -29,6 +29,7 @@ export default {
 
 <style>
 .allPages {
-  background-color: rgb(237, 235, 231);
+  background-color:#f1ecec; /*rgb(237, 235, 231);*/
+  
 }
 </style>
