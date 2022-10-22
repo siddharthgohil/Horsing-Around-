@@ -9,8 +9,8 @@
     legend="right"
     loading="Loading..."
     :chart-options="chartOptions"
-    :height="40"
-    :width="100"
+    :height="150"
+    :width="400"
   ></Line>
 </div>
 
@@ -36,25 +36,16 @@ export default {
       }
     };
   },
-  props: {
-    getChartData: { type: Function },
-  },
-  async mounted(){
-    this.getChartData()
-  },
-
-
 };
 </script>
 
 <style scoped>
-#history_positions {
-  margin: 40px;
+.lineGraph{
   padding: 30px;
+}
+#history_positions {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: whitesmoke;
+  background-color: #fff;
 }
 
 </style>

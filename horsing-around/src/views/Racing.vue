@@ -3,9 +3,9 @@
     <div class="AllRaces">
       <SideBar @changeRace="display($event)" />
       <div class="content">
-        <RaceTitlePlaceHolder />
-        <RacingPositionsGraph :getChartData="getChartData" ref="positions"/>
-        <RacingTable />
+        <RaceTitlePlaceHolder :raceNum="raceNum"/>
+        <RacingPositionsGraph ref="positions"/>
+        <RacingTable :raceNum="raceNum"/>
         <RaceAnalysis :raceNum="raceNum" />
         <NewsTicker />
       </div>
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-// Dependency should be RacingPage - RaceCard
 import SideBar from "@/components/RacingPage/SideBarComponent/Side-Bar.vue";
 import RaceTitlePlaceHolder from "@/components/RacingPage/RaceTitlePlaceHolder.vue";
 import RaceAnalysis from "@/components/RacingPage/RaceAnalysis.vue";
@@ -45,6 +44,7 @@ export default {
   },
   mounted() {
     this.display(1);
+    this.getChartData(1)
   },
   methods: {
     async display(raceNum) {
