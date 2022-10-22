@@ -1,14 +1,14 @@
 <template>
   <div id="nav">
-    <img id="navlogo" src="@/assets/logo.png" />
-    <router-link to="/">Racing</router-link> |
-    <router-link to="/horses">Horses</router-link> |
-    <router-link to="/jockey">Jockey</router-link>
+    <router-link to="/"><img id="navlogo" src="@/assets/logo.png" /></router-link>
+    <router-link to="/" class ='textLinks'>Racing</router-link> |
+    <router-link to="/horses" class ='textLinks'>Horses</router-link> |
+    <router-link to="/jockey" class ='textLinks'>Jockey</router-link>
 
-    <router-link class="loginSegment" to="/Profile" v-if="user"
+    <router-link class="textLinks loginSegment" to="/Profile" v-if="user"
       >Profile</router-link
     >
-    <router-link class="loginSegment" to="/Login" v-else>Login</router-link>
+    <router-link class="textLinks loginSegment" to="/Login" v-else>Login</router-link>
   </div>
 </template>
 
@@ -34,13 +34,13 @@ export default {
 </script>
 
 <style>
+.login {
+  float: right;
+}
 #navlogo {
   width: 70px;
   float: left;
   margin-left: 20px;
-}
-.login {
-  float: right;
 }
 #app {
   font-family: "Roboto", sans-serif;
@@ -56,7 +56,7 @@ export default {
   display: inline-block;
   width: 100%;
 }
-#nav a {
+#nav a.textLinks {
   padding-top: 19px;
   font-weight: bold;
   text-decoration: none;
@@ -73,9 +73,10 @@ export default {
   padding-top: 10px !important;
   height: 40px !important;
 }
-#nav a.router-link-exact-active {
+#nav a.textLinks.router-link-exact-active {
   background-color: #f1ecec;
   color: #750e7e;
   border-radius: 30px;
 }
+
 </style>

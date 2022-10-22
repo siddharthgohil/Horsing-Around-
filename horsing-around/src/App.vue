@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="allPages">
-      <NavBar :key="refreshComp" />
+      <NavBar ref = 'navBarRev'/>
       <router-view @added="change"></router-view>
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
   methods: {
     change() {
       console.log("wors");
-      this.refreshComp += 1;
+      this.$refs.navBarRev.user = false;
     },
   },
 };
