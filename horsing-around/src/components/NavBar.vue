@@ -67,7 +67,6 @@ export default {
 }
 .loginSegment {
   float: right;
-  display:inline-block;
   background-color: #750e7e;
   color:#fff !important;
   padding-top: 10px !important;
