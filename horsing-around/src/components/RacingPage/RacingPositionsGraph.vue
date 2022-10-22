@@ -3,13 +3,8 @@
     <Line
       id="history_positions"
       :chart-data="chartData"
-      xtitle="Race Number"
-      ytitle="Position"
-      title="Recent Form of Horses"
-      legend="right"
-      loading="Loading..."
       :chart-options="chartOptions"
-      :height="150"
+      :height="180"
       :width="400"
     ></Line>
   </div>
@@ -39,6 +34,37 @@ export default {
           y2: {
             position: "left",
             reverse: true,
+            labelString: "probability",
+            title: {
+              display: true,
+              padding: 10,
+              text: "Position",
+              font: {
+                size: 20,
+                weight: "bold",
+              },
+            },
+          },
+          xAxes: {
+            title: {
+              display: true,
+              padding: 10,
+              text: "Race Number",
+              font: {
+                size: 20,
+                weight: "bold",
+              },
+            },
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "Recent Form of Horses",
+            font: {
+              size: 24,
+            },
+            padding: 10
           },
         },
       },

@@ -83,19 +83,19 @@ export default {
       ];
       z.forEach((docs) => {
         let yy = docs.data(); // Row data
-        chartData2.labels.push(counter + 1 + " Day ago");
+        chartData2.labels.push(6-counter + " Day ago");
         chartData2.datasets.push({
           label: yy["name"],
           backgroundColor: backgroundColors[counter],
           borderColor: backgroundColors[counter],
           yAxisID: 'y2',
           data: [
-            yy["1RaceAgo"],
-            yy["2RaceAgo"],
-            yy["3RaceAgo"],
-            yy["4RaceAgo"],
-            yy["5RaceAgo"],
             yy["6RaceAgo"],
+            yy["5RaceAgo"],
+            yy["4RaceAgo"],
+            yy["3RaceAgo"],
+            yy["2RaceAgo"],
+            yy["1RaceAgo"],
           ],
         });
         counter++;
