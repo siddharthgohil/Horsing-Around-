@@ -1,14 +1,25 @@
 <template>
   <div id="nav">
-    <router-link to="/"><img id="navlogo" src="@/assets/logo.png" /></router-link>
-    <router-link to="/" class ='textLinks'>Racing</router-link> |
-    <router-link to="/horses" class ='textLinks'>Horses</router-link> |
-    <router-link to="/jockey" class ='textLinks'>Jockey</router-link>
+    <div class="left">
+      <router-link to="/"
+        ><img id="navlogo" src="@/assets/logo.png"
+      /></router-link>
+    </div>
 
-    <router-link class="textLinks loginSegment" to="/Profile" v-if="user"
-      >Profile</router-link
-    >
-    <router-link class="textLinks loginSegment" to="/Login" v-else>Login</router-link>
+    <div class="middle">
+      <router-link to="/" class="textLinks">Racing</router-link> |
+      <router-link to="/horses" class="textLinks">Horses</router-link> |
+      <router-link to="/jockey" class="textLinks">Jockey</router-link>
+    </div>
+
+    <div class="right">
+      <router-link class="textLinks loginSegment" to="/Profile" v-if="user"
+        >Profile</router-link
+      >
+      <router-link class="textLinks loginSegment" to="/Login" v-else
+        >Login</router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -34,14 +45,6 @@ export default {
 </script>
 
 <style>
-.login {
-  float: right;
-}
-#navlogo {
-  width: 70px;
-  float: left;
-  margin-left: 20px;
-}
 #app {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,21 +56,23 @@ export default {
   padding: 10px;
   background-color: #fff;
   height: 60px;
-  display: inline-block;
+  display: flex;
   width: 100%;
 }
+#navlogo {
+  width: 70px;
+  margin-left: 20px;
+}
 #nav a.textLinks {
-  padding-top: 19px;
+  padding-top: 25px;
   font-weight: bold;
   text-decoration: none;
   color: #2e3e50;
-  display: inline-block;
   width: 100px;
   margin: 0px 1%;
   height: 70px;
 }
 .loginSegment {
-  float: right;
   background-color: #750e7e;
   color: #fff !important;
   padding-top: 10px !important;
@@ -79,4 +84,25 @@ export default {
   border-radius: 30px;
 }
 
+.left {
+  flex: 1;          /* shorthand for: flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.middle{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 </style>

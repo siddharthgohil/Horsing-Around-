@@ -4,7 +4,10 @@
       <SideBar @changeRace="display($event)" />
       <div class="content">
         <RaceTitlePlaceHolder :raceNum="raceNum" />
-        <RacingPositionsGraph ref="positions" />
+        <RacingPositionsGraph
+          ref="positions"
+          @changeChart="display(this.raceNum)"
+        />
         <RacingTable :raceNum="raceNum" />
         <RaceAnalysis :raceNum="raceNum" />
         <NewsTicker />
@@ -68,9 +71,15 @@ export default {
       }
     },
     async getChartData(raceNum) {
-      var z = await getDocs(
-        collection(db, "Previous_Positions_" + raceNum)
-      );
+      var type_line = this.$refs.positions.selected;
+      var z;
+      if (type_line == "Betting Odds") {
+        z = await getDocs(collection(db, "Betting_Odds_" + raceNum));
+        this.$refs.positions.chartOptions.scales.y2.title.text = "Betting Odds";
+      } else {
+        z = await getDocs(collection(db, "Previous_Positions_" + raceNum));
+      }
+
       var counter = 0;
       var chartData2 = { labels: [], datasets: [] };
       var backgroundColors = [
@@ -83,12 +92,12 @@ export default {
       ];
       z.forEach((docs) => {
         let yy = docs.data(); // Row data
-        chartData2.labels.push(6-counter + " Day ago");
+        chartData2.labels.push(6 - counter + " Day ago");
         chartData2.datasets.push({
           label: yy["name"],
           backgroundColor: backgroundColors[counter],
           borderColor: backgroundColors[counter],
-          yAxisID: 'y2',
+          yAxisID: "y2",
           data: [
             yy["6RaceAgo"],
             yy["5RaceAgo"],

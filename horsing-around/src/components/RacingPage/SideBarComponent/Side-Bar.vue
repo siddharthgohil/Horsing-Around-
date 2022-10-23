@@ -29,7 +29,7 @@
 
 <script>
 export default {
-    name: 'Side-Bar',
+    name: 'SideBar',
     methods:{
         changeRace(raceNum){
             this.$emit('changeRace', raceNum)

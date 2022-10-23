@@ -1,7 +1,17 @@
 <template>
   <div class="lineGraph">
+    <div id="chartdiv">
+      <h3 id="chartTitle">Recent {{ selected }} of horses</h3>
+      <div id="chartSelector">
+        <!-- <label for="cars">Please Select One</label> -->
+        <select name="cars" v-model="selected" @click="clicked">
+          <option>Racing Positions</option>
+          <option>Betting Odds</option></select
+        >
+      </div>
+    </div>
     <Line
-      id="history_positions"
+      id="line_graph_chart"
       :chart-data="chartData"
       :chart-options="chartOptions"
       :height="180"
@@ -10,7 +20,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import { Line } from "vue-chartjs";
 
 export default {
@@ -18,11 +28,14 @@ export default {
   components: {
     Line,
   },
-  props: {
-    raceNum: Number,
+  methods: {
+    clicked() {
+      this.$emit("changeChart");
+    },
   },
   data() {
     return {
+      selected: "Racing Positions",
       chartData: {
         labels: [],
         datasets: [],
@@ -38,7 +51,7 @@ export default {
             title: {
               display: true,
               padding: 10,
-              color: 'black',
+              color: "black",
               text: "Position",
               font: {
                 size: 20,
@@ -50,24 +63,13 @@ export default {
             title: {
               display: true,
               padding: 10,
-              text: "Race Number",
-              color: 'black',
+              text: "Days Ago",
+              color: "black",
               font: {
                 size: 20,
                 weight: "bold",
               },
             },
-          },
-        },
-        plugins: {
-          title: {
-            display: true,
-            text: "Recent Form of Horses",
-            color: 'black',
-            font: {
-              size: 24,
-            },
-            padding: 10
           },
         },
       },
@@ -80,8 +82,25 @@ export default {
 .lineGraph {
   padding: 30px;
 }
-#history_positions {
+#line_graph_chart {
   display: block;
   background-color: #fff;
+}
+#chartdiv {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+#chartTitle {
+  flex: 0 1 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#chartSelector {
+  flex: 0 1 auto;
+  margin-left: auto;
 }
 </style>
