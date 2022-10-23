@@ -1,11 +1,16 @@
 <template>
   <div class="HorseBG" v-if="user">
-      <div class="AllHorses">
-        <SideBarHorse/>
-        <div class="content">
-          <HorsesPage/>
-        </div>
+    <div class="AllHorses">
+      <SideBarHorse />
+      <div class="content">
+        <RaceTitlePlaceHolder />
+        <RacingPositionsGraph
+          ref="positions"
+          @changeChart="display(this.raceNum)"
+        />
+        <HorsesPage />
       </div>
+    </div>
   </div>
   <div class="HorseBG" v-else>
     <h3>This page is only for logged in members</h3>
@@ -14,18 +19,23 @@
 
 <script>
 import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
-import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue"
+import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue";
+import RaceTitlePlaceHolder from "@/components/RacingPage/RaceTitlePlaceHolder.vue";
+import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   name: "HorseView",
   components: {
     HorsesPage,
-    SideBarHorse
+    SideBarHorse,
+    RacingPositionsGraph,
+    RaceTitlePlaceHolder,
   },
   data() {
     return {
       user: false,
+      raceNum: 1,
     };
   },
   mounted() {
@@ -36,9 +46,14 @@ export default {
       }
     });
   },
-};
+  methods: {
+    display(raceNum){
+      this.raceNum = raceNum
+      this.$refs.positions.display(raceNum)
+    }
+  }
+}
 </script>
-
 
 <style scoped>
 .AllHorses {

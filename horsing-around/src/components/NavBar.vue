@@ -61,7 +61,7 @@ export default {
 }
 #navlogo {
   width: 70px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 #nav a.textLinks {
   padding-top: 25px;
