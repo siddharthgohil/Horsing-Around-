@@ -3,12 +3,17 @@
     <div class="AllHorses">
       <SideBarHorse />
       <div class="content">
-        <RaceTitlePlaceHolder />
-        <RacingPositionsGraph
+        <VthingTop />
+        <IndividualHorseStats />
+        <IndividualHorseRaceStats />
+        <!-- <RacingPositionsGraph
           ref="positions"
           @changeChart="display(this.raceNum)"
-        />
+        />  -->
         <HorsesPage />
+        <VthingBottom />
+        <IndividualHorseAllRaceStats />
+
       </div>
     </div>
   </div>
@@ -20,8 +25,13 @@
 <script>
 import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
 import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue";
-import RaceTitlePlaceHolder from "@/components/RacingPage/RaceTitlePlaceHolder.vue";
-import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
+import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
+import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
+import IndividualHorseStats from "@/components/HorsePage/IndividualHorseStats.vue";
+import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
+import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
+//IndividualHorseAllRaceStats
+// import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
@@ -29,8 +39,12 @@ export default {
   components: {
     HorsesPage,
     SideBarHorse,
-    RacingPositionsGraph,
-    RaceTitlePlaceHolder,
+    //RacingPositionsGraph,
+    IndividualHorseRaceStats,
+    IndividualHorseAllRaceStats,
+    IndividualHorseStats,
+    VthingTop,
+    VthingBottom
   },
   data() {
     return {
@@ -64,7 +78,7 @@ export default {
   width: 150;
 }
 .HorseBG {
-  height: 100vh;
+  height: max-content;
 }
 
 .content {
