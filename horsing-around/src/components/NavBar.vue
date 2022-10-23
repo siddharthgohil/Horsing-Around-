@@ -82,6 +82,9 @@ export default {
   background-color: #f1ecec;
   color: #750e7e;
   border-radius: 30px;
+  margin-top: 60px;
+  padding-top: 10px !important;
+  height: 100px;
 }
 
 .left {
