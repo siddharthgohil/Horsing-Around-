@@ -9,10 +9,35 @@
 </template>
 
 <script>
+import firebaseApp from "../../firebase";
+import { getFirestore } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+
+const db = getFirestore(firebaseApp);
 export default {
   name: "RaceAnalysis",
   props: {
     raceNum: Number,
+  },
+  async mounted(){
+    this.changeRaceAnalysis(1)
+  },
+  methods: {
+    async changeRaceAnalysis(raceNum) {
+      let z = await getDocs(
+        collection(db, "RacingAnalysisText_" + String(raceNum))
+      );
+      var container = document.getElementById("RaceAnalysisText");
+      if (container != null) {
+        container.innerHTML = "";
+        z.forEach((docs) => {
+          let yy = docs.data(); // Row data
+          container.innerHTML += '<h5 class="pick">' + yy.Title + "</h5>";
+          container.innerHTML +=
+            '<p class="pickAnalysis">' + yy.Text + "</p><br/>";
+        });
+      }
+    },
   },
 };
 </script>

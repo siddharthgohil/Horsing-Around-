@@ -7,16 +7,16 @@
     </div>
 
     <div class="middle">
-      <router-link to="/" class="textLinks">Racing</router-link> |
-      <router-link to="/horses" class="textLinks">Horses</router-link> |
-      <router-link to="/jockey" class="textLinks">Jockey</router-link>
+      <router-link to="/" class="mid textLinks">Racing</router-link> |
+      <router-link to="/horses" class="mid textLinks">Horses</router-link> |
+      <router-link to="/jockey" class="mid textLinks">Jockey</router-link>
     </div>
 
     <div class="right">
-      <router-link class="textLinks loginSegment" to="/Profile" v-if="user"
+      <router-link class="loginSegment textLinks" to="/Profile" v-if="user"
         >Profile</router-link
       >
-      <router-link class="textLinks loginSegment" to="/Login" v-else
+      <router-link class="loginSegment textLinks" to="/Login" v-else
         >Login</router-link
       >
     </div>
@@ -78,7 +78,8 @@ export default {
   padding-top: 10px !important;
   height: 40px !important;
 }
-#nav a.textLinks.router-link-exact-active {
+
+#nav a.mid.router-link-exact-active {
   background-color: #f1ecec;
   color: #750e7e;
   border-radius: 30px;
@@ -86,6 +87,13 @@ export default {
   padding-top: 10px !important;
   height: 100px;
 }
+
+#nav a.loginSegment.router-link-exact-active {
+  background-color: #f1ecec;
+  color: #750e7e;
+  border-radius: 30px;
+}
+
 
 .left {
   flex: 1;          /* shorthand for: flex-grow: 1, flex-shrink: 1, flex-basis: 0 */

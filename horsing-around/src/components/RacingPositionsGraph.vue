@@ -3,10 +3,11 @@
     <div id="chartdiv">
       <h3 id="chartTitle">Recent {{ selected }} of horses</h3>
       <div id="chartSelector">
-        <!-- <label for="cars">Please Select One</label> -->
-        <select name="cars" v-model="selected" @click="clicked">
-          <option>Racing Positions</option>
-          <option>Betting Odds</option>
+        <select name="chartType" v-model="selected" @click="clicked">
+          <optgroup>
+            <option class="chartType">Racing Positions</option>
+            <option class="chartType">Betting Odds</option>
+          </optgroup>
         </select>
       </div>
     </div>
@@ -37,15 +38,15 @@ export default {
   data() {
     return {
       selected: "Racing Positions",
-      height: 180,
-      width: 400,
+      height: 400,
+      width: 900,
       chartData: {
         labels: [],
         datasets: [],
       },
       chartOptions: {
-        responsive: true,
-        maintainAspectRatio: true,
+        responsive: false,
+        maintainAspectRatio: false,
         scales: {
           y2: {
             position: "left",
@@ -79,31 +80,11 @@ export default {
     };
   },
   mounted() {
-    this.display(1);
     this.getChartData(1);
   },
   methods: {
     clicked() {
       this.$emit("changeChart");
-    },
-    display(raceNum) {
-      this.changeRaceAnalysis(raceNum);
-      this.getChartData(raceNum);
-    },
-    async changeRaceAnalysis(raceNum) {
-      let z = await getDocs(
-        collection(db, "RacingAnalysisText_" + String(raceNum))
-      );
-      var container = document.getElementById("RaceAnalysisText");
-      if (container != null) {
-        container.innerHTML = "";
-        z.forEach((docs) => {
-          let yy = docs.data(); // Row data
-          container.innerHTML += '<h5 class="pick">' + yy.Title + "</h5>";
-          container.innerHTML +=
-            '<p class="pickAnalysis">' + yy.Text + "</p><br/>";
-        });
-      }
     },
     async getChartData(raceNum) {
       var z;
@@ -151,11 +132,16 @@ export default {
 
 <style scoped>
 .lineGraph {
-  padding: 30px;
+  background-color: #fff;
+  margin: 30px;
 }
 #line_graph_chart {
   display: block;
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 900px;
 }
 #chartdiv {
   background-color: #fff;
@@ -169,6 +155,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 2vw;
 }
 #chartSelector {
   flex: 0 1 auto;
