@@ -7,7 +7,7 @@
       <h5 class="RaceTable">Race Table for Race {{ raceNum }}</h5>
     </div>
 
-    <table id="table" class="auto-index">
+    <table id="raceTable" class="auto-index">
       <tr>
         <th>Colour</th>
         <th># - Horse Name - Desc</th>
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-//import ChartsGraph from "@/components/Charts.vue"
 import firebaseApp from "../../firebase.js";
 import { getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
@@ -38,13 +37,17 @@ export default {
     raceNum: Number,
   },
   mounted() {
-    async function display() {
-      let z = await getDocs(collection(db, "Races"));
-      var ind = 0;
+    this.display(1);
+  },
+  methods: {
+    async display(raceNum) {
+      let z = await getDocs(collection(db, "Races_"+raceNum));
+      console.log(z);
+      var ind = 1;
 
       z.forEach((docs) => {
         let yy = docs.data();
-        var table = document.getElementById("table");
+        var table = document.getElementById("raceTable");
         var row = table.insertRow(ind);
 
         var colour = yy.Colour;
@@ -79,9 +82,9 @@ export default {
         cell8.innerHTML = jockey;
         cell9.innerHTML = trainer;
         cell10.innerHTML = owner;
+        ind+=1
       });
-    }
-    display();
+    },
   },
 };
 </script>
@@ -113,21 +116,15 @@ table {
   width: 94%;
   padding: 30px;
   margin: 40px;
+  background-color: #a267bd;
+  color: #fff;
 }
-
-tr:nth-child(even) {
-  background-color: #e3edee;
-}
-
-th,
-td {
+th{
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
-  background-color: whitesmoke;
+  background-color: #fff;
+  color: black;
 }
-.bwt {
-  color: rgb(243, 236, 236);
-  background-color: rgb(255, 94, 0);
-}
+
 </style>

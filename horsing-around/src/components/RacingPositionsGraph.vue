@@ -11,6 +11,7 @@
         </select>
       </div>
     </div>
+    <br>
     <Line
       id="line_graph_chart"
       :chart-data="chartData"
@@ -38,8 +39,8 @@ export default {
   data() {
     return {
       selected: "Racing Positions",
-      height: 400,
-      width: 900,
+      height: 300,
+      width: 700,
       chartData: {
         labels: [],
         datasets: [],
@@ -141,7 +142,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 900px;
+  width: 700px;
 }
 #chartdiv {
   background-color: #fff;
@@ -155,7 +156,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2vw;
+  font-size: min(max(2vw,20px), 30px);
 }
 #chartSelector {
   flex: 0 1 auto;

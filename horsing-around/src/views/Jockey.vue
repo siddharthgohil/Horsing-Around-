@@ -1,10 +1,13 @@
 <template>
   <div class="contiainerMain">
-    <h6>This is an about page</h6>
     <p>
-      CPP Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Quisquam, iusto, nulla facere eveniet eius aperiam rem dolor sint tempore
-      error iste. Earum incidunt ipsa natus nulla reiciendis culpa dolor nam.
+      A day’s worth of prize money at the Singapore Turf Club horse races
+      reaches around $500,000, not including the amount punters spend betting on
+      these races. With such large amounts of money in the industry, there is a
+      lack of an easily accessible analytics platform to help punters make a
+      more informed decision on which horse to bet on. Our goal is to create
+      such a horse racing analytics platform, where all relevant information is
+      easily available, understood, and customizable.
     </p>
   </div>
 </template>

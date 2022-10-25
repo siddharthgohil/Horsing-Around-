@@ -52,10 +52,11 @@ export default {
 <style scoped>
 .AllRaces {
   display: grid;
-  grid-template-columns: 1fr 8fr;
+  /* grid-auto-columns: 100px; */
+  grid-template-columns: 20vh 8fr;
   background-color: #6a2889;
   height: max-content;
-  width: 150;
+  width: 250;
 }
 
 .content {
