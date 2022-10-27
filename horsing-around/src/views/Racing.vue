@@ -8,7 +8,7 @@
           ref="positions"
           @changeChart="display(this.raceNum)"
         />
-        <RacingTable :raceNum="raceNum" />
+        <RacingTable ref="raceTable" :raceNum="raceNum" />
         <RaceAnalysis ref="raceAnalysis" :raceNum="raceNum" />
         <NewsTicker />
       </div>
@@ -44,6 +44,7 @@ export default {
       this.raceNum = raceNum
       this.$refs.positions.getChartData(raceNum)
       this.$refs.raceAnalysis.changeRaceAnalysis(raceNum)
+      this.$refs.raceTable.display(raceNum)
     }
   }
 };
