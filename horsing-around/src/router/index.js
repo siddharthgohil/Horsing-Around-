@@ -6,6 +6,7 @@ import HorsesPage from "@/views/Horses.vue";
 import LoginComp from "@/views/Login.vue";
 import NotFound from "@/views/NotFound";
 import ProfilePage from "@/views/Profile";
+import HorsesComparison from "@/views/HorsesComparison.vue"
 
 const routes = [
   {
@@ -18,7 +19,6 @@ const routes = [
     name: "Horses",
     component: HorsesPage,
   },
-
   {
     path: "/jockey",
     name: "Jockey",
@@ -33,6 +33,11 @@ const routes = [
     path: "/profile",
     name: "ProfilePage",
     component: ProfilePage,
+  },
+  {
+    path: "/horses-comparison",
+    name: "HorsesComparison",
+    component: HorsesComparison,
   },
   {
     path: "/:catchAll(.*)",
