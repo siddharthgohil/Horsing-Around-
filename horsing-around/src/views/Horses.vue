@@ -12,6 +12,11 @@
         <!-- <VthingTop />
         <IndividualHorseStats />
         <IndividualHorseRaceStats />
+        <IndividualHorseTrainer />
+        <!-- <RacingPositionsGraph
+          ref="positions"
+          @changeChart="display(this.raceNum)"
+        />  -->
         <HorsesPage />
         <VthingBottom />
         <IndividualHorseAllRaceStats /> -->
@@ -41,6 +46,7 @@ import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
 import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
 import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
 import IndividualHorseStats from "@/components/HorsePage/IndividualHorseStats.vue";
+import IndividualHorseTrainer from "@/components/HorsePage/IndividualHorseTrainer.vue";
 import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
 import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
 */
@@ -56,7 +62,8 @@ export default {
     AllHorses,
     //HorsesPage,
     //RacingPositionsGraph,
-    /*IndividualHorseRaceStats,
+    IndividualHorseRaceStats,
+    IndividualHorseTrainer,
     IndividualHorseAllRaceStats,
     IndividualHorseStats,
     VthingTop,

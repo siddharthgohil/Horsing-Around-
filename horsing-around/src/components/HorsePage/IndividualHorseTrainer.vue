@@ -1,7 +1,8 @@
 <template>
-  <table id="horseStats" class="auto-index">
+
+  <table id="horseTrainer" class="auto-index">
       <tr>
-        <th>Distance (Track)</th>
+        <th>Trainer</th>
         <th>Start</th>
         <th>1st</th>
         <th>2nd</th>
@@ -14,7 +15,6 @@
         <th>Unplaced</th>
       </tr>
     </table>
-
 </template>
 
 <script>
@@ -24,7 +24,7 @@ import { collection, getDocs } from "firebase/firestore";
 const db = getFirestore(firebaseApp);
 
 export default {
-    name: 'IndividualHorseRaceStats',
+    name: 'IndividualHorseTrainer',
     props: {
     raceNum: Number,
     },
@@ -33,16 +33,16 @@ export default {
     },
     methods: {
       async display(raceNum) {
-        let z = await getDocs(collection(db, "Horse"+raceNum+"_Stats"));
+        let z = await getDocs(collection(db, "Horse"+raceNum+"_Trainer"));
         console.log(z);
         var ind = 1;
 
         z.forEach((docs) => {
           let yy = docs.data();
-          var table = document.getElementById("horseStats");
+          var table = document.getElementById("horseTrainer");
           var row = table.insertRow(ind);
 
-          var distance = yy["Distance (Track)"];
+          var trainer = yy["Trainer"];
           var start = yy["Start"];
           var first = yy["1st"];
           var second = yy["2nd"];
@@ -66,7 +66,7 @@ export default {
           var cell10 = row.insertCell(9);
           var cell11 = row.insertCell(10);
 
-          cell1.innerHTML = distance;
+          cell1.innerHTML = trainer;
           cell2.innerHTML = start;
           cell3.innerHTML = first;
           cell4.innerHTML = second;
@@ -85,6 +85,7 @@ export default {
 </script>
 
 <style scoped>
+
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -101,6 +102,5 @@ th,td{
   padding: 8px;
   background-color: #fff;
   color: #954ab8;
-
 }
 </style>
