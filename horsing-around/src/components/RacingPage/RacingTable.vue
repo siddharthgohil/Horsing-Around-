@@ -58,6 +58,9 @@ export default {
       let z = await getDocs(collection(db, "Races_" + raceNum));
       var ind = 1;
       var table = document.getElementById("raceTable");
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
 
       z.forEach((docs) => {
         let yy = docs.data();
@@ -116,7 +119,6 @@ export default {
         const docSnap = await getDoc(docRef);
         var horseData = docSnap.data()
         alert("You are going to save " + horseData.HorseName);
-        // console.log(horseData);
         await setDoc(doc(db, String(this.user.uid), rowIndex), horseData);
       }
     },
