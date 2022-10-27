@@ -2,12 +2,12 @@
     <div id="sidebar">
         <div class="menu-items">
             <!-- Stores the number of race of the day -->
-            <router-link to='/' class="side-btn" active-class="active" >
+            <router-link to='/horses' class="side-btn" active-class="active" >
                 <button id = "AllHorses" class="link-container side-btn-active">
                    All Horses
                 </button>
             </router-link>
-            <router-link to='/' class="side-btn" active-class="active" >
+            <router-link to='/horses-comparison' class="side-btn" active-class="active" >
                 <button id = "Comparison" class="link-container">
                    Comparison
                 </button>
