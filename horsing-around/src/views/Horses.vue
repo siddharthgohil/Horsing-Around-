@@ -3,17 +3,25 @@
     <div class="AllHorses">
       <SideBarHorse />
       <div class="content">
-        <VthingTop />
+
+         <!-- For All horse Page-->
+        <AllHorses />
+
+
+        <!-- For Individual horse Page-->
+        <!-- <VthingTop />
         <IndividualHorseStats />
         <IndividualHorseRaceStats />
-        <!-- <RacingPositionsGraph
-          ref="positions"
-          @changeChart="display(this.raceNum)"
-        />  -->
         <HorsesPage />
         <VthingBottom />
-        <IndividualHorseAllRaceStats />
+        <IndividualHorseAllRaceStats /> -->
 
+
+
+      <!-- <RacingPositionsGraph
+              ref="positions"
+              @changeChart="display(this.raceNum)"
+            />  -->
       </div>
     </div>
   </div>
@@ -23,28 +31,36 @@
 </template>
 
 <script>
-import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
+
 import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue";
+
+import AllHorses from "@/components/HorsePage/AllHorses.vue";
+
+/* For Individual horse Page
+import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
 import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
 import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
 import IndividualHorseStats from "@/components/HorsePage/IndividualHorseStats.vue";
 import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
 import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
-//IndividualHorseAllRaceStats
+*/
+
 // import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   name: "HorseView",
   components: {
-    HorsesPage,
+  
     SideBarHorse,
+    AllHorses,
+    //HorsesPage,
     //RacingPositionsGraph,
-    IndividualHorseRaceStats,
+    /*IndividualHorseRaceStats,
     IndividualHorseAllRaceStats,
     IndividualHorseStats,
     VthingTop,
-    VthingBottom
+    VthingBottom*/
   },
   data() {
     return {
