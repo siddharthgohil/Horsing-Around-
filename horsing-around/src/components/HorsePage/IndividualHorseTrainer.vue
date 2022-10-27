@@ -1,8 +1,8 @@
 <template>
-
+<div id="HorseStats">
   <table id="horseTrainer" class="auto-index">
-      <tr>
-        <th>Trainer</th>
+      <tr class="Header_Row">
+        <th class="first_col">Trainer</th>
         <th>Start</th>
         <th>1st</th>
         <th>2nd</th>
@@ -15,6 +15,7 @@
         <th>Unplaced</th>
       </tr>
     </table>
+</div>
 </template>
 
 <script>
@@ -67,6 +68,7 @@ export default {
           var cell11 = row.insertCell(10);
 
           cell1.innerHTML = trainer;
+          cell1.style.textAlign = "left";
           cell2.innerHTML = start;
           cell3.innerHTML = first;
           cell4.innerHTML = second;
@@ -89,18 +91,31 @@ export default {
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 94%;
-  padding: 30px;
-  margin: 40px;
+  width: 100%;
   background-color: #fff;
   color: black;
   border: 1px solid #dddddd;
 }
+
+#HorseStats {
+    width: 95%;
+    background: #fff;
+    margin: auto;
+    margin-top: 20px;
+    
+}
 th,td{
-  border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
   background-color: #fff;
   color: #954ab8;
+}
+.first_col, td.first_col {
+  text-align: left !important;
+}
+
+.Header_Row {
+  color: #6A2889;
+  border-bottom: 3px solid #6A2889;
 }
 </style>
