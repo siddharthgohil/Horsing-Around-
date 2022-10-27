@@ -1,10 +1,15 @@
 <template>
   <div class="HorseBG" v-if="user">
-    <div class="comparison-container">
+    <div class="page">
       <SideBarHorse />
       <div class="content">
 
-         <!-- For All horse Page-->
+        <!-- Racing Positions Graph-->
+        <RacingPositionsGraph/>
+
+        <!-- Best Selections-->
+
+         <!-- For Horse Comparison Comp-->
         <HorsesComparisonComp />
 
 
@@ -20,12 +25,14 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue"
 import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue"
+import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue"
 
 export default {
     name: "HorseComparison",
     components: {
         HorsesComparisonComp,
         SideBarHorse,
+        RacingPositionsGraph,
     },
     data() {
         return {
@@ -44,7 +51,7 @@ export default {
 </script>
 
 <style scoped>
-.comparison-container {
+.page {
   display: grid;
   grid-template-columns: 1fr 8fr;
   background-color: #6a2889;
