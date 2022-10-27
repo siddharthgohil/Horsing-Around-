@@ -41,6 +41,7 @@ export default {
   text-align: center;
   padding: 10x;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 #btn:hover {

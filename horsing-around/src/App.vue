@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="allPages">
-      <NavBar ref = 'navBarRev'/>
-      <router-view @added="change"></router-view>
+      <NavBar/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -19,10 +19,6 @@ export default {
     };
   },
   methods: {
-    change() {
-      console.log("wors");
-      this.$refs.navBarRev.user = false;
-    },
   },
 };
 </script>
