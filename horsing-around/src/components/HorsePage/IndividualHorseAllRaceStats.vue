@@ -1,12 +1,9 @@
 <template>
 
-  <div>
-    <div class="HorseStats">
-    </div>
-
+  <div  class="HorseStats">
     <table id="raceDetails" class="auto-index">
-      <tr>
-        <th>Race / Trial Date</th>
+      <tr class="Header_Row">
+        <th class="first_col">Race / Trial Date</th>
         <th>C</th>
         <th>Cl</th>
         <th>Pl</th>
@@ -94,6 +91,8 @@ export default {
         var cell18 = row.insertCell(17);
 
         cell1.innerHTML = raceDate;
+        cell1.style.textAlign ="left";
+        cell1.style.paddingLeft = "10px";
         cell2.innerHTML = c;
         cell3.innerHTML = cl;
         cell4.innerHTML = pl;
@@ -127,6 +126,11 @@ export default {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.Header_Row {
+      color: #6A2889;
+    border-bottom: 3px solid #6A2889;
+    padding-top: 10px;
+}
 table {
   width: 100%;
 }
@@ -149,14 +153,27 @@ table {
   margin: 40px;
   background-color: #fff;
   color: black;
-  border: 1px solid #dddddd;
+
 }
 th,td{
-  border: 1px solid #dddddd;
+
   text-align: center;
   padding: 8px;
   background-color: #fff;
   color: #954ab8;
+}
+
+#HorseStats {
+    width: 95%;
+    background: #fff;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    
+}
+
+.first_col, td.first_col {
+  text-align: left !important;
 }
 
 </style>
