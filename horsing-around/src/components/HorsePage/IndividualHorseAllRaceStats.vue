@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <div class="HorseStats">
     </div>
@@ -124,6 +125,14 @@ export default {
     min-height: 320px;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+table {
+  width: 100%;
+}
+.first_col {
+  text-align: left;
+  padding-left: 10px;
 }
 .vthing {
   height: 30px;
@@ -149,4 +158,5 @@ th,td{
   background-color: #fff;
   color: #954ab8;
 }
+
 </style>

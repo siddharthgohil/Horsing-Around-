@@ -63,18 +63,19 @@ export default {
 
       z.forEach((docs) => {
         let yy = docs.data();
+        var docId = docs.id;
         var row = table.insertRow(ind);
 
-        var colour = yy.Colour;
-        var horseName = yy.HorseName;
-        var bar = yy.Bar;
-        var lastSix = yy.LastSix;
-        var gear = yy.Gear;
-        var rating = yy.Rating;
-        var weight = yy.Weight;
-        var jockey = yy.Jockey;
-        var trainer = yy.Trainer;
-        var owner = yy.Owner;
+        var colour = yy["Colour"];
+        var horseName = yy["# - Horse Name - Desc"];
+        var bar = yy["Bar"];
+        var lastSix = yy["Last 6 Runs"];
+        var gear = yy["Gear"];
+        var rating = yy["Rtg (+/-)"];
+        var weight = yy["Raceday Horse Wt (+/-)"];
+        var jockey = yy["Jockey - C Wt (Hcp Wt)"];
+        var trainer = yy["Trainer"];
+        var owner = yy["Owner"];
 
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -98,13 +99,14 @@ export default {
         cell8.innerHTML = jockey;
         cell9.innerHTML = trainer;
         cell10.innerHTML = owner;
+
         var bu = document.createElement("button");
         bu.className = "bwt";
         bu.innerHTML = "Delete";
         var deleteHorseFunc = this.deleteHorse;
-        var rowIndex = ind;
+        var docIDcurr = docId;
         bu.onclick = function () {
-          deleteHorseFunc(rowIndex);
+          deleteHorseFunc(docIDcurr);
         };
         cell11.appendChild(bu);
         ind += 1;

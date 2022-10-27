@@ -47,6 +47,7 @@ export default {
 }
 .info {
   text-align: left;
+
 }
 
 </style>

@@ -18,6 +18,7 @@ const routes = [
     name: "Horses",
     component: HorsesPage,
   },
+
   {
     path: "/jockey",
     name: "Jockey",

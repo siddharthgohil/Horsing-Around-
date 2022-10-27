@@ -29,16 +29,13 @@
 <script>
 import firebaseApp from "../../firebase.js";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs,getDoc , setDoc, doc } from "firebase/firestore";
+import { collection, getDocs, getDoc, setDoc, doc } from "firebase/firestore";
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
   name: "RacingTable",
-  props: {
-    raceNum: Number,
-  },
   mounted() {
     this.display(1);
     const auth = getAuth();
@@ -51,12 +48,13 @@ export default {
   data() {
     return {
       user: false,
+      raceNum: 1
     };
   },
   methods: {
     async display(raceNum) {
-      let z = await getDocs(collection(db, "Races"+raceNum));
-      console.log(z);
+      this.raceNum = raceNum
+      let z = await getDocs(collection(db, "Races" + raceNum));
       var ind = 1;
       var table = document.getElementById("raceTable");
       while (table.rows.length > 1) {
@@ -65,6 +63,7 @@ export default {
 
       z.forEach((docs) => {
         let yy = docs.data();
+        var docId = docs.id;
         var row = table.insertRow(ind);
 
         var colour = yy["Colour"];
@@ -105,9 +104,9 @@ export default {
         bu.className = "bwt";
         bu.innerHTML = "Save";
         var saveHorseFunc = this.saveHorse;
-        var rowIndex = ind;
+        var docIDcurr = docId;
         bu.onclick = function () {
-          saveHorseFunc(rowIndex);
+          saveHorseFunc(docIDcurr);
         };
         cell11.appendChild(bu);
         ind += 1;
@@ -115,12 +114,15 @@ export default {
     },
     async saveHorse(i) {
       if (this.user) {
-        var rowIndex = String(i)
-        const docRef = doc(db, "Races_1", rowIndex)
+        var rowIndex = String(i);
+        const docRef = doc(db, "Races" + this.raceNum, rowIndex);
         const docSnap = await getDoc(docRef);
-        var horseData = docSnap.data()
-        alert("You are going to save " + horseData.HorseName);
-        await setDoc(doc(db, String(this.user.uid), rowIndex), horseData);
+        var horseData = docSnap.data();
+        alert("You are going to save " + horseData["# - Horse Name - Desc"]);
+        await setDoc(
+          doc(db, String(this.user.uid), horseData["# - Horse Name - Desc"]),
+          horseData
+        );
       }
     },
   },
@@ -158,7 +160,8 @@ table {
   color: black;
   border: 1px solid #dddddd;
 }
-th,td{
+th,
+td {
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;

@@ -14,6 +14,7 @@
         <th>Unplaced</th>
       </tr>
     </table>
+
 </template>
 
 <script>
@@ -100,5 +101,6 @@ th,td{
   padding: 8px;
   background-color: #fff;
   color: #954ab8;
+
 }
 </style>
