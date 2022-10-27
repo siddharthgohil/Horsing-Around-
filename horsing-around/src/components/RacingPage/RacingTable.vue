@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async display(raceNum) {
-      let z = await getDocs(collection(db, "Races_"+raceNum));
+      let z = await getDocs(collection(db, "Races"+raceNum));
       console.log(z);
       var ind = 1;
 
@@ -50,16 +50,16 @@ export default {
         var table = document.getElementById("raceTable");
         var row = table.insertRow(ind);
 
-        var colour = yy.Colour;
-        var horseName = yy.HorseName;
-        var bar = yy.Bar;
-        var lastSix = yy.LastSix;
-        var gear = yy.Gear;
-        var rating = yy.Rating;
-        var weight = yy.Weight;
-        var jockey = yy.Jockey;
-        var trainer = yy.Trainer;
-        var owner = yy.Owner;
+        var colour = yy["Colour"];
+        var horseName = yy["# - Horse Name - Desc"];
+        var bar = yy["Bar"];
+        var lastSix = yy["Last 6 Runs"];
+        var gear = yy["Gear"];
+        var rating = yy["Rtg (+/-)"];
+        var weight = yy["Raceday Horse Wt (+/-)"];
+        var jockey = yy["Jockey - C Wt (Hcp Wt)"];
+        var trainer = yy["Trainer"];
+        var owner = yy["Owner"];
 
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -116,15 +116,21 @@ table {
   width: 94%;
   padding: 30px;
   margin: 40px;
-  background-color: #a267bd;
-  color: #fff;
+  background-color: #fff;
+  color: black;
+  border: 1px solid #dddddd;
 }
-th{
+th,td{
   border: 1px solid #dddddd;
   text-align: center;
   padding: 8px;
   background-color: #fff;
   color: black;
+}
+
+tr:nth-child(even){
+    background-color: purple;
+
 }
 
 </style>
