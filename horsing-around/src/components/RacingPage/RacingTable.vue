@@ -163,10 +163,6 @@ th,td{
   text-align: center;
   padding: 8px;
   background-color: #fff;
-  color: black;
-}
-tr:nth-child(even){
-    background-color: purple;
-
+  color: #954ab8;
 }
 </style>

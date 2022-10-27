@@ -6,6 +6,7 @@
         <VthingTop />
         <IndividualHorseStats />
         <IndividualHorseRaceStats />
+        <IndividualHorseTrainer />
         <!-- <RacingPositionsGraph
           ref="positions"
           @changeChart="display(this.raceNum)"
@@ -28,6 +29,7 @@ import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-
 import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
 import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
 import IndividualHorseStats from "@/components/HorsePage/IndividualHorseStats.vue";
+import IndividualHorseTrainer from "@/components/HorsePage/IndividualHorseTrainer.vue";
 import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
 import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
 //IndividualHorseAllRaceStats
@@ -41,6 +43,7 @@ export default {
     SideBarHorse,
     //RacingPositionsGraph,
     IndividualHorseRaceStats,
+    IndividualHorseTrainer,
     IndividualHorseAllRaceStats,
     IndividualHorseStats,
     VthingTop,
