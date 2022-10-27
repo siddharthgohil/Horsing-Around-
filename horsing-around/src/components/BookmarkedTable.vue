@@ -1,13 +1,11 @@
-<!-- Just welcome to CPP -->
-
 <template>
   <div>
     <div class="MainHeader">
-      <img class="vthing" src="../../assets/images/v-thing.png" />
-      <h5 class="RaceTable">Race Table for Race {{ raceNum }}</h5>
+      <img class="vthing" src="../assets/images/v-thing.png" />
+      <h5 class="BookmarkedTableHeader">Bookmarked Horses</h5>
     </div>
 
-    <table id="raceTable" class="auto-index">
+    <table id="bookmarkedTable" class="auto-index">
       <tr>
         <th>Colour</th>
         <th># - Horse Name - Desc</th>
@@ -27,24 +25,25 @@
 </template>
 
 <script>
-import firebaseApp from "../../firebase.js";
+import firebaseApp from "../firebase.js";
 import { getFirestore } from "firebase/firestore";
-import { collection, getDocs,getDoc , setDoc, doc } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
-  name: "RacingTable",
+  name: "BookmarkedTable",
   props: {
     raceNum: Number,
   },
   mounted() {
-    this.display(1);
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.user = user;
+        this.display();
       }
     });
   },
@@ -54,10 +53,13 @@ export default {
     };
   },
   methods: {
-    async display(raceNum) {
-      let z = await getDocs(collection(db, "Races_" + raceNum));
+    async display() {
+      let z = await getDocs(collection(db, this.user.uid));
       var ind = 1;
-      var table = document.getElementById("raceTable");
+      var table = document.getElementById("bookmarkedTable");
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
 
       z.forEach((docs) => {
         let yy = docs.data();
@@ -96,28 +98,24 @@ export default {
         cell8.innerHTML = jockey;
         cell9.innerHTML = trainer;
         cell10.innerHTML = owner;
-
         var bu = document.createElement("button");
         bu.className = "bwt";
-        bu.innerHTML = "Save";
-        var saveHorseFunc = this.saveHorse;
+        bu.innerHTML = "Delete";
+        var deleteHorseFunc = this.deleteHorse;
         var rowIndex = ind;
         bu.onclick = function () {
-          saveHorseFunc(rowIndex);
+          deleteHorseFunc(rowIndex);
         };
         cell11.appendChild(bu);
         ind += 1;
       });
     },
-    async saveHorse(i) {
+    async deleteHorse(i) {
       if (this.user) {
-        var rowIndex = String(i)
-        const docRef = doc(db, "Races_1", rowIndex)
-        const docSnap = await getDoc(docRef);
-        var horseData = docSnap.data()
-        alert("You are going to save " + horseData.HorseName);
-        // console.log(horseData);
-        await setDoc(doc(db, String(this.user.uid), rowIndex), horseData);
+        var rowIndex = String(i);
+        await deleteDoc(doc(db, String(this.user.uid), rowIndex));
+        console.log("Document Sucessfully deleted!", rowIndex);
+        this.display();
       }
     },
   },
@@ -138,7 +136,7 @@ export default {
   margin-left: 2%;
   margin-top: 0.7%;
 }
-.RaceTable {
+.BookmarkedTableHeader {
   float: left;
   margin-top: 1%;
   font-weight: 1000;

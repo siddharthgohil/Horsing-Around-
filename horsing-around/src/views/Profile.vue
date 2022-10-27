@@ -19,6 +19,7 @@
       </p>
     </div>
     <LogoutComp @added="change" />
+    <BookmarkedTable/>
   </div>
   <div v-else>
     <LoginComp />
@@ -29,12 +30,14 @@
 import LogoutComp from "@/components/LogoutComp.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import LoginComp from "@/components/LoginComp";
+import BookmarkedTable from "@/components/BookmarkedTable.vue";
 
 export default {
   name: "ProfilePage",
   components: {
     LogoutComp,
     LoginComp,
+    BookmarkedTable,
   },
   data() {
     return {
