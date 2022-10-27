@@ -9,24 +9,21 @@
         
 
         <!-- For Individual horse Page-->
-        <!-- <VthingTop />
+        <VthingTop />
         <IndividualHorseStats />
         <IndividualHorseRaceStats />
         <IndividualHorseTrainer />
-        <!-- <RacingPositionsGraph
+
+        <!--<RacingPositionsGraph
           ref="positions"
           @changeChart="display(this.raceNum)"
         />  -->
+
         <HorsesPage />
         <VthingBottom />
-        <IndividualHorseAllRaceStats /> -->
+        <IndividualHorseAllRaceStats />
 
 
-
-      <!-- <RacingPositionsGraph
-              ref="positions"
-              @changeChart="display(this.raceNum)"
-            />  -->
       </div>
     </div>
   </div>
@@ -41,15 +38,13 @@ import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-
 
 import AllHorses from "@/components/HorsePage/AllHorses.vue";
 
-/* For Individual horse Page
-import HorsesPage from "@/components/HorsePage/HorsesPage.vue";
+/* For Individual horse Page */
 import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
 import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
 import IndividualHorseStats from "@/components/HorsePage/IndividualHorseStats.vue";
 import IndividualHorseTrainer from "@/components/HorsePage/IndividualHorseTrainer.vue";
 import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
 import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
-*/
 
 // import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -67,7 +62,7 @@ export default {
     IndividualHorseAllRaceStats,
     IndividualHorseStats,
     VthingTop,
-    VthingBottom*/
+    VthingBottom
   },
   data() {
     return {
