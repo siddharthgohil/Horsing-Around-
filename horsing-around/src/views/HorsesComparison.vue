@@ -1,23 +1,25 @@
 <template>
-  <div class="HorseBG" v-if="user">
-    <div class="page">
-      <SideBarHorse />
-      <div class="content">
+    <div class="HorseBG" v-if="user">
+        <div class="page">
+            <SideBarHorse />
+            <div class="content">
+            <div class="upper_portion">
+                <!-- Racing Positions Graph-->
+                <RacingPositionsGraph class="graph"/>
 
-        <!-- Racing Positions Graph-->
-        <RacingPositionsGraph/>
+                <!-- Best performers-->
+                <BestPerformers/>
+            </div>
 
-        <!-- Best Selections-->
-
-         <!-- For Horse Comparison Comp-->
-        <HorsesComparisonComp />
+                <!-- For Horse Comparison Comp-->
+            <HorsesComparisonComp />
 
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
     <div class="HorseBG" v-else>
-      <h3>This page is only for logged in members</h3>
+        <h3>This page is only for logged in members</h3>
     </div>
   </template>
 
@@ -26,6 +28,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue"
 import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue"
 import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue"
+import BestPerformers from "@/components/HorsePage/BestPerformers.vue"
 
 export default {
     name: "HorseComparison",
@@ -33,6 +36,7 @@ export default {
         HorsesComparisonComp,
         SideBarHorse,
         RacingPositionsGraph,
+        BestPerformers,
     },
     data() {
         return {
@@ -65,5 +69,14 @@ export default {
 .content {
   background-color: #f1ecec;
   border-radius: 20px;
+}
+
+.upper_portion {
+    flex-direction: row;
+    display: flex;
+}
+
+.graph {
+    width: 70%;
 }
 </style>
