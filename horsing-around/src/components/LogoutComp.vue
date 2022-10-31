@@ -36,17 +36,30 @@ export default {
 
 <style>
 #btn {
-  display: flex;
+  /*display: flex;
   float: right;
   text-align: center;
   padding: 10x;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  margin: 15px 15px;
+  background: #dfa3f1;
+  padding: 10px 50px;
+  border-radius: 3px;
+  border: 1px solid #070707;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  color: #222;
+  transition: 0.2s;
+
 }
 
-#btn:hover {
-  color: rgb(243, 236, 236);
-  background-color: rgb(255, 94, 0);
+#btn:hover { 
+  background: #6a2889;
+  color: #222;
+  /*color: rgb(243, 236, 236); */
+  /*background-color: rgb(255, 94, 0); */
   box-shadow: 3px 3px grey;
 }
 </style>

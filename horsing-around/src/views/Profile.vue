@@ -1,4 +1,20 @@
 <template>
+
+<div class="card" v-if = "user">
+       
+        <div class="cover-photo">
+            <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" class="profile">
+        </div>
+        <h3 class="profile-name">{{ user.displayName }}</h3>
+        <p class="about">{{ user.email }} </p>
+        <LogoutComp @added="change" />
+        <BookmarkedTable/>
+    </div>
+
+<div v-else>
+    <LoginComp />
+  </div>
+<!--
   <div style="text-align: center" v-if="user">
     <div id="logodiv">
       <img
@@ -24,6 +40,11 @@
   <div v-else>
     <LoginComp />
   </div>
+-->
+
+  
+
+
 </template>
 
 <script>
@@ -62,6 +83,63 @@ export default {
 
 <style>
 #logodiv {
-  margin: 20px;
+  margin: 20px; 
 }
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.card {
+    padding: 15px;
+    background: rgba(160, 12, 245, 0.133);
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
+    user-select: none;
+}
+
+.cover-photo {
+    position: relative;
+    background: url(https://racecoursehospitality.net/wp-content/uploads/2016/04/worcester-racecourse-header.jpg);
+    background-size: cover;
+    height: 300px;
+    border-radius: 5px 5px 0 0;
+}
+
+.profile {
+    position: absolute;
+    width: 120px;
+    bottom: -60px;
+    left: 15px;
+    border-radius: 50%;
+    border: 1px solid #6a2889;
+    background: #6a2889;
+    padding: 5px;
+}
+
+.profile-name {
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    margin: 30px 0 0 0px;
+    color: rgb(0, 0, 0);
+}
+
+.about {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    line-height: 1.6;
+    color: rgb(0, 0, 0);
+}
+
+
+
+
+
 </style>
