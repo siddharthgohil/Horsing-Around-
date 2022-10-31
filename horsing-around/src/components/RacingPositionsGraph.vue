@@ -135,6 +135,7 @@ export default {
 .lineGraph {
   background-color: #fff;
   margin: 30px;
+  width: 95%;
 }
 #line_graph_chart {
   display: block;

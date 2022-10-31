@@ -81,6 +81,8 @@ export default {
 .news-ticker {
   background: rgba(160, 12, 245, 0.133);
   padding: 5px 5px;
+  margin-left: 30px;
+  width: 95%
 }
 .news-label {
   writing-mode: horizontal-tb;

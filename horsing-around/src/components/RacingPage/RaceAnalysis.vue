@@ -53,19 +53,20 @@ export default {
 .vthing {
   height: 30px;
   float: left;
-  margin-left: 2%;
-  margin-top: 0.7%;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 .RaceAnalysis {
   float: left;
   margin-top: 1%;
   font-weight: 1000;
-  margin-left: 1%;
+  margin-left: 30px;
 }
 #RaceAnalysisText {
-  margin: 30px;
+  margin-top: 20px;
+  margin-left: 30px;
   padding: 20px;
-  width: 100%;
+  width: 95%;
   background-color: #fff;
   text-align: left;
 }

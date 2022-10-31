@@ -46,7 +46,7 @@ export default {
   background-color: #fff;
   height: 50px;
   margin-top: 1.5% !important;
-  margin: auto;
+  margin-left: 30px;
 }
 .vthing {
   height: 30px;
