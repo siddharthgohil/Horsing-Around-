@@ -42,7 +42,6 @@ export default {
   padding: 10x;
   margin-right: 20px;
   margin-bottom: 20px; */
-  margin: 15px 15px;
   background: #dfa3f1;
   padding: 10px 50px;
   border-radius: 3px;
@@ -52,6 +51,14 @@ export default {
   cursor: pointer;
   color: #222;
   transition: 0.2s;
+  width: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  position: relative;
+  top: 50%;
+  left: 30px;
+  float: right;
 
 }
 

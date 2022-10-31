@@ -5,9 +5,16 @@
         <div class="cover-photo">
             <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" class="profile">
         </div>
-        <h3 class="profile-name">{{ user.displayName }}</h3>
-        <p class="about">{{ user.email }} </p>
-        <LogoutComp @added="change" />
+        <div class = "wrapper">
+          <p class="profile-name">{{ user.displayName }}</p>
+          <div class = "divider">
+            <h1>|</h1>
+          </div>
+          <p class="about">{{ user.email }} </p>
+        </div>
+        <div class = "logout">
+          <LogoutComp @added="change" />
+        </div>
         <BookmarkedTable/>
     </div>
 
@@ -101,6 +108,7 @@ export default {
     text-align: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7);
     user-select: none;
+    overflow: hidden;
 }
 
 .cover-photo {
@@ -122,21 +130,42 @@ export default {
     padding: 5px;
 }
 
+.wrapper {
+  display: flex;
+}
+
 .profile-name {
+    display: inline-block;
     padding: 10px;
     text-align: center;
     font-size: 30px;
-    margin: 30px 0 0 0px;
-    color: rgb(0, 0, 0);
+    margin: 40px 0 0 0px;
+    color: #6a2889;
+    width: 30%;
+    font-family: "Roboto", sans-serif;
+}
+
+.divider {
+  padding: 10px;
+  margin: 33px 0 0 0px;
 }
 
 .about {
+    display: inline-block;
+    padding: 10px;
     text-align: center;
-    font-size: 20px;
-    margin-top: 30px;
-    line-height: 1.6;
-    color: rgb(0, 0, 0);
+    font-size: 30px;
+    margin: 40px 0 0 0px;
+    color: #6a2889;
+    width: 30%;
+    font-family: "Roboto", sans-serif;
 }
+
+.logout {
+  float: right;
+}
+
+
 
 
 
