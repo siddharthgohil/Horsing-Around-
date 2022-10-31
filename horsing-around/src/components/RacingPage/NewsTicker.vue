@@ -87,6 +87,7 @@ export default {
   text-orientation: upright;
   user-select: none;
   font-weight: bold;
+  font-family: "Roboto", sans-serif;
   border-right: 1px solid #0005;
   padding-right: 10px;
   padding-left: 10px;

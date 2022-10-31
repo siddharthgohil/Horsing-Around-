@@ -36,6 +36,7 @@ export default {
 }
 
 .news-item .text {
+  font-family: "Roboto", sans-serif;
   user-select: none;
   font-size: 16px;
   font-weight: bold;
