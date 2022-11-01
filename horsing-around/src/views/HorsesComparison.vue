@@ -1,7 +1,8 @@
 <template>
     <div class="HorseBG" v-if="user">
         <div class="page">
-            <SideBarHorse />
+            <SideBarHorse @changeTab="display($event)"  /> 
+            <!-- this is the issue above. need to only return the corr page, can hard code the event w Comparison string -->
             <div class="content">
             <div class="upper_portion">
                 <!-- Racing Positions Graph-->
@@ -41,6 +42,7 @@ export default {
     data() {
         return {
             user: false,
+            currTab: "AllHorses",
         };
     },
     mounted() {
@@ -51,6 +53,14 @@ export default {
             }
         });
     },
+
+    methods: {
+        display(currTab){   
+            this.currTab = currTab
+            //this.$refs.positions.display(raceNum)
+            console.log("displaying?")
+        }
+    }
 }
 </script>
 
