@@ -4,24 +4,31 @@
       <SideBarHorse />
       <div class="content">
 
+      <!-- For horse Comparison-->
+      <div class="HorseComparison">
+        <RacingPositionsGraph
+          ref="positions"
+          @changeChart="display(this.raceNum)"
+        /> 
+
+      </div>
+      <!-- For horse Comparison-->
          <!-- For All horse Page-->
         <AllHorses />
-        
+        <!-- For All horse Page-->
 
         <!-- For Individual horse Page-->
         <VthingTop />
         <IndividualHorseStats />
         <IndividualHorseRaceStats />
         <IndividualHorseTrainer />
-
-        <!--<RacingPositionsGraph
-          ref="positions"
-          @changeChart="display(this.raceNum)"
-        />  -->
-
         <HorsesPage />
         <VthingBottom />
         <IndividualHorseAllRaceStats />
+        <!-- For Individual horse Page-->
+
+
+
 
 
       </div>
@@ -46,7 +53,7 @@ import IndividualHorseTrainer from "@/components/HorsePage/IndividualHorseTraine
 import IndividualHorseRaceStats from "@/components/HorsePage/IndividualHorseRaceStats.vue";
 import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseAllRaceStats.vue";
 
-// import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
+import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
@@ -56,7 +63,7 @@ export default {
     SideBarHorse,
     AllHorses,
     //HorsesPage,
-    //RacingPositionsGraph,
+    RacingPositionsGraph,
     IndividualHorseRaceStats,
     IndividualHorseTrainer,
     IndividualHorseAllRaceStats,
@@ -102,5 +109,12 @@ export default {
 .content {
   background-color: #f1ecec;
   border-radius: 20px;
+}
+
+.HorseComparison {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  width: 100%;
+
 }
 </style>
