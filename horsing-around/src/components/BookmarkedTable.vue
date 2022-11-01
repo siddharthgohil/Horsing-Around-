@@ -135,22 +135,22 @@ export default {
 .vthing {
   height: 30px;
   float: left;
-  margin-left: 2%;
+  margin-left: 30px;
   margin-top: 0.7%;
 }
 .BookmarkedTableHeader {
   float: left;
   margin-top: 1%;
   font-weight: 1000;
-  margin-left: 1%;
+  margin-left: 30px;
 }
 
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 94%;
+  width: 95%;
   padding: 30px;
-  margin: 40px;
+  margin: 30px;
   background-color: #a267bd;
   color: #fff;
 }

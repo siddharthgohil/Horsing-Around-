@@ -147,18 +147,19 @@ export default {
   float: left;
   margin-top: 1%;
   font-weight: 1000;
-  margin-left: 1%;
+  margin-left: 30px;
 }
 
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 94%;
+  width: 95%;
   padding: 30px;
   margin: 40px;
   background-color: #fff;
   color: black;
   border: 1px solid #dddddd;
+  margin-left: 30px;
 }
 th,
 td {
