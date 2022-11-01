@@ -51,14 +51,13 @@ export default {
   cursor: pointer;
   color: #222;
   transition: 0.2s;
-  width: 10%;
+  width: 15%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  margin-top: 20px;
+  margin-top: 30px;
   position: relative;
   top: 50%;
-  left: 30px;
-  float: right;
+  left: 47%;
 
 }
 
