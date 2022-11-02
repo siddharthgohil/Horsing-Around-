@@ -20,6 +20,7 @@
           <RacingPositionsGraph class="graph" />
           <BestPerformers />
         </div>
+        <HorseComparisonDiv />
         <HorsesComparisonComp />
       </div>
     </div>
@@ -35,6 +36,8 @@ import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-
 
 import AllHorses from "@/components/HorsePage/AllHorses.vue";
 
+
+
 /* For Individual horse Page */
 import VthingTop from "@/components/HorsePage/FixedComponent/VthingTop.vue";
 import VthingBottom from "@/components/HorsePage/FixedComponent/VthingBottom.vue";
@@ -46,6 +49,8 @@ import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseA
 // import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+
+import HorseComparisonDiv from "@/components/HorsePage/HorseComparisonDiv.vue"
 import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue";
 import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import BestPerformers from "@/components/HorsePage/BestPerformers.vue";
@@ -55,6 +60,7 @@ export default {
   components: {
     SideBarHorse,
     AllHorses,
+    HorseComparisonDiv,
     IndividualHorseRaceStats,
     IndividualHorseTrainer,
     IndividualHorseAllRaceStats,
