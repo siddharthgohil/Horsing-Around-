@@ -1,7 +1,9 @@
 <template>
   <div class="HorseBG" v-if="user">
+    
     <div class="AllHorses">
       <SideBarHorse ref="sideBarRef" @changeTab="display($event)" />
+      
       <div class="content" v-if="allHorsesPage">
         <div>
           <AllHorses />
@@ -22,6 +24,7 @@
       </div>
     </div>
   </div>
+
   <div class="HorseBG" v-else>
     <h3>This page is only for logged in members</h3>
   </div>

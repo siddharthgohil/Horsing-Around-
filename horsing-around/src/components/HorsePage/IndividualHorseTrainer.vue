@@ -1,6 +1,6 @@
 <template>
-<div id="HorseStats">
-  <table id="horseTrainer" class="auto-index">
+  <div id="HorseStats">
+    <table id="horseTrainer" class="auto-index">
       <tr class="Header_Row">
         <th class="first_col">Trainer</th>
         <th>Start</th>
@@ -15,7 +15,7 @@
         <th>Unplaced</th>
       </tr>
     </table>
-</div>
+  </div>
 </template>
 
 <script>
@@ -25,24 +25,24 @@ import { collection, getDocs } from "firebase/firestore";
 const db = getFirestore(firebaseApp);
 
 export default {
-    name: 'IndividualHorseTrainer',
-    props: {
+  name: "IndividualHorseTrainer",
+  props: {
     raceNum: Number,
-    },
-    mounted() {
-      this.display(1);
-    },
-    methods: {
-      async display(raceNum) {
-        let z = await getDocs(collection(db, "Horse"+raceNum+"_Trainer"));
-        // console.log(z);
+  },
+  mounted() {
+    this.display(1);
+  },
+  methods: {
+    async display(raceNum) {
+      let z = await getDocs(collection(db, "Horse" + raceNum + "_Trainer"));
+      // console.log(z);
+      var table = document.getElementById("horseTrainer");
+      if (table) {
         var ind = 1;
 
         z.forEach((docs) => {
           let yy = docs.data();
-          var table = document.getElementById("horseTrainer");
           var row = table.insertRow(ind);
-
           var trainer = yy["Trainer"];
           var start = yy["Start"];
           var first = yy["1st"];
@@ -79,15 +79,15 @@ export default {
           cell9.innerHTML = placed;
           cell10.innerHTML = first4;
           cell11.innerHTML = unplaced;
-          ind+=1
+          ind += 1;
         });
-      },
+      }
     },
-  };
+  },
+};
 </script>
 
 <style scoped>
-
 table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -98,24 +98,25 @@ table {
 }
 
 #HorseStats {
-    width: 95%;
-    background: #fff;
-    margin: auto;
-    margin-top: 20px;
-    
+  width: 95%;
+  background: #fff;
+  margin: auto;
+  margin-top: 20px;
 }
-th,td{
+th,
+td {
   text-align: center;
   padding: 8px;
   background-color: #fff;
   color: #954ab8;
 }
-.first_col, td.first_col {
+.first_col,
+td.first_col {
   text-align: left !important;
 }
 
 .Header_Row {
-  color: #6A2889;
-  border-bottom: 3px solid #6A2889;
+  color: #6a2889;
+  border-bottom: 3px solid #6a2889;
 }
 </style>

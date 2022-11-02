@@ -48,69 +48,71 @@ export default {
   data() {
     return {
       user: false,
-      raceNum: 1
+      raceNum: 1,
     };
   },
   methods: {
     async display(raceNum) {
-      this.raceNum = raceNum
+      this.raceNum = raceNum;
       let z = await getDocs(collection(db, "Races" + raceNum));
       var ind = 1;
       var table = document.getElementById("raceTable");
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
+      if (table) {
+        while (table.rows.length > 1) {
+          table.deleteRow(1);
+        }
+
+        z.forEach((docs) => {
+          let yy = docs.data();
+          var docId = docs.id;
+          var row = table.insertRow(ind);
+
+          var colour = yy["Colour"];
+          var horseName = yy["# - Horse Name - Desc"];
+          var bar = yy["Bar"];
+          var lastSix = yy["Last 6 Runs"];
+          var gear = yy["Gear"];
+          var rating = yy["Rtg (+/-)"];
+          var weight = yy["Raceday Horse Wt (+/-)"];
+          var jockey = yy["Jockey - C Wt (Hcp Wt)"];
+          var trainer = yy["Trainer"];
+          var owner = yy["Owner"];
+
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          var cell7 = row.insertCell(6);
+          var cell8 = row.insertCell(7);
+          var cell9 = row.insertCell(8);
+          var cell10 = row.insertCell(9);
+          var cell11 = row.insertCell(10);
+
+          cell1.innerHTML = colour;
+          cell2.innerHTML = horseName;
+          cell3.innerHTML = bar;
+          cell4.innerHTML = lastSix;
+          cell5.innerHTML = gear;
+          cell6.innerHTML = rating;
+          cell7.innerHTML = weight;
+          cell8.innerHTML = jockey;
+          cell9.innerHTML = trainer;
+          cell10.innerHTML = owner;
+
+          var bu = document.createElement("button");
+          bu.className = "bwt";
+          bu.innerHTML = "Save";
+          var saveHorseFunc = this.saveHorse;
+          var docIDcurr = docId;
+          bu.onclick = function () {
+            saveHorseFunc(docIDcurr);
+          };
+          cell11.appendChild(bu);
+          ind += 1;
+        });
       }
-
-      z.forEach((docs) => {
-        let yy = docs.data();
-        var docId = docs.id;
-        var row = table.insertRow(ind);
-
-        var colour = yy["Colour"];
-        var horseName = yy["# - Horse Name - Desc"];
-        var bar = yy["Bar"];
-        var lastSix = yy["Last 6 Runs"];
-        var gear = yy["Gear"];
-        var rating = yy["Rtg (+/-)"];
-        var weight = yy["Raceday Horse Wt (+/-)"];
-        var jockey = yy["Jockey - C Wt (Hcp Wt)"];
-        var trainer = yy["Trainer"];
-        var owner = yy["Owner"];
-
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-        var cell8 = row.insertCell(7);
-        var cell9 = row.insertCell(8);
-        var cell10 = row.insertCell(9);
-        var cell11 = row.insertCell(10);
-
-        cell1.innerHTML = colour;
-        cell2.innerHTML = horseName;
-        cell3.innerHTML = bar;
-        cell4.innerHTML = lastSix;
-        cell5.innerHTML = gear;
-        cell6.innerHTML = rating;
-        cell7.innerHTML = weight;
-        cell8.innerHTML = jockey;
-        cell9.innerHTML = trainer;
-        cell10.innerHTML = owner;
-
-        var bu = document.createElement("button");
-        bu.className = "bwt";
-        bu.innerHTML = "Save";
-        var saveHorseFunc = this.saveHorse;
-        var docIDcurr = docId;
-        bu.onclick = function () {
-          saveHorseFunc(docIDcurr);
-        };
-        cell11.appendChild(bu);
-        ind += 1;
-      });
     },
     async saveHorse(i) {
       if (this.user) {
