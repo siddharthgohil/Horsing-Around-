@@ -1,25 +1,24 @@
 <template>
   <div class="HorseBG" v-if="user">
     <div class="AllHorses">
-      <SideBarHorse />
-      <div class="content">
-        <!-- For All horse Page-->
-        <AllHorses />
-
-        <!-- For Individual horse Page-->
-        <VthingTop />
-        <IndividualHorseStats />
-        <IndividualHorseRaceStats />
-        <IndividualHorseTrainer />
-
-        <!--<RacingPositionsGraph
-          ref="positions"
-          @changeChart="display(this.raceNum)"
-        />  -->
-
-        <!-- <HorsesPage /> -->
-        <VthingBottom />
-        <IndividualHorseAllRaceStats />
+      <SideBarHorse ref="sideBarRef" @changeTab="display($event)" />
+      <div class="content" v-if="allHorsesPage">
+        <div>
+          <AllHorses />
+          <VthingTop />
+          <IndividualHorseStats />
+          <IndividualHorseRaceStats />
+          <IndividualHorseTrainer />
+          <VthingBottom />
+          <IndividualHorseAllRaceStats />
+        </div>
+      </div>
+      <div class="content" v-if="ComparisonPage">
+        <div class="upper_portion">
+          <RacingPositionsGraph class="graph" />
+          <BestPerformers />
+        </div>
+        <HorsesComparisonComp />
       </div>
     </div>
   </div>
@@ -44,6 +43,10 @@ import IndividualHorseAllRaceStats from "@/components/HorsePage/IndividualHorseA
 // import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue";
+import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
+import BestPerformers from "@/components/HorsePage/BestPerformers.vue";
+
 export default {
   name: "HorseView",
   components: {
@@ -55,11 +58,16 @@ export default {
     IndividualHorseStats,
     VthingTop,
     VthingBottom,
+    HorsesComparisonComp,
+    RacingPositionsGraph,
+    BestPerformers,
   },
   data() {
     return {
       user: false,
-      raceNum: 1,
+      currTab: "AllHorses",
+      allHorsesPage: true,
+      ComparisonPage: false,
     };
   },
   mounted() {
@@ -71,9 +79,16 @@ export default {
     });
   },
   methods: {
-    display(raceNum) {
-      this.raceNum = raceNum;
-      this.$refs.positions.display(raceNum);
+    display(currTab) {
+      this.$refs.sideBarRef.changeColors(currTab);
+      this.allHorsesPage = false;
+      this.ComparisonPage = false;
+      if (currTab == "Comparison") {
+        this.ComparisonPage = true;
+      }
+      else {
+        this.allHorsesPage = true;
+      }
     },
   },
 };
@@ -94,5 +109,14 @@ export default {
 .content {
   background-color: #f1ecec;
   border-radius: 20px;
+}
+
+.upper_portion {
+  flex-direction: row;
+  display: flex;
+}
+
+.graph {
+  width: 70%;
 }
 </style>

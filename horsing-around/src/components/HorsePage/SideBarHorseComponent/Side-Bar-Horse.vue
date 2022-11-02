@@ -6,33 +6,33 @@
         to="/horses"
         class="side-btn"
         active-class="active"
-        v-on:click="changeTab('AllHorses')"
+        v-on:click="changeTabParent('AllHorses')"
       >
         <button id="AllHorsesButton" class="link-container side-btn-active">
           All Horses
         </button>
       </router-link>
       <router-link
-        to="/horses-comparison"
+        to="/horses"
         class="side-btn"
         active-class="active"
-        v-on:click="changeTab('Comparison')"
+        v-on:click="changeTabParent('Comparison')"
       >
         <button id="ComparisonButton" class="link-container">Comparison</button>
       </router-link>
       <router-link
-        to="/"
+        to="/horses"
         class="side-btn"
         active-class="active"
-        v-on:click="changeTab('BookMarked')"
+        v-on:click="changeTabParent('BookMarked')"
       >
         <button id="BookMarkedButton" class="link-container">BookMarked</button>
       </router-link>
       <router-link
-        to="/"
+        to="/horses"
         class="side-btn"
         active-class="active"
-        v-on:click="changeTab('Combination')"
+        v-on:click="changeTabParent('Combination')"
       >
         <button id="CombinationButton" class="link-container">
           Combination
@@ -45,9 +45,19 @@
 <script>
 export default {
   name: "SideBarHorse",
+  data(){
+    return{
+      tabName: "AllHorses"
+    }
+  },
+  mounted(){
+    this.changeColors(this.tabName)
+  },
   methods: {
-    changeTab(tabName) {
+    changeTabParent(tabName){
       this.$emit("changeTab", tabName);
+    },
+    changeColors(tabName) {
       var pagesList = ["AllHorses", "Comparison", "BookMarked", "Combination"];
       for (let i = 0; i < 4; i++) {
         if (pagesList[i] != tabName) {
