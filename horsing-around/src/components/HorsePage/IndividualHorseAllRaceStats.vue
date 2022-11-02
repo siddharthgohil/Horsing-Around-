@@ -44,73 +44,75 @@ export default {
     async display(raceNum) {
       let z = await getDocs(collection(db, "Horse" + raceNum));
       // console.log(z);
+      var table = document.getElementById("raceDetails");
+
       var ind = 1;
+      if (table) {
+        z.forEach((docs) => {
+          let yy = docs.data();
+          var row = table.insertRow(ind);
 
-      z.forEach((docs) => {
-        let yy = docs.data();
-        var table = document.getElementById("raceDetails");
-        var row = table.insertRow(ind);
+          var raceDate = yy["Race / Trial Date"];
+          var c = yy["C"];
+          var cl = yy["Cl"];
+          var pl = yy["Pl"];
+          var rating = yy["Rtg"];
+          var distance = yy["Dist"];
+          var t = yy["T"];
+          var g = yy["G"];
+          var bar = yy["Bar"];
+          var cwt = yy["C Wt"];
+          var hwt = yy["H Wt"];
+          var position = yy["Running Position"];
+          var lbw = yy["LBW"];
+          var finishTime = yy["Finish Time"];
+          var winSecond = yy["Winning / Second Horse"];
+          var gear = yy["Gear"];
+          var jockey = yy["Jockey"];
+          var trainer = yy["Trainer"];
 
-        var raceDate = yy["Race / Trial Date"];
-        var c = yy["C"];
-        var cl = yy["Cl"];
-        var pl = yy["Pl"];
-        var rating = yy["Rtg"];
-        var distance = yy["Dist"];
-        var t = yy["T"];
-        var g = yy["G"];
-        var bar = yy["Bar"];
-        var cwt = yy["C Wt"];
-        var hwt = yy["H Wt"];
-        var position = yy["Running Position"];
-        var lbw = yy["LBW"];
-        var finishTime = yy["Finish Time"];
-        var winSecond = yy["Winning / Second Horse"];
-        var gear = yy["Gear"];
-        var jockey = yy["Jockey"];
-        var trainer = yy["Trainer"];
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          var cell7 = row.insertCell(6);
+          var cell8 = row.insertCell(7);
+          var cell9 = row.insertCell(8);
+          var cell10 = row.insertCell(9);
+          var cell11 = row.insertCell(10);
+          var cell12 = row.insertCell(11);
+          var cell13 = row.insertCell(12);
+          var cell14 = row.insertCell(13);
+          var cell15 = row.insertCell(14);
+          var cell16 = row.insertCell(15);
+          var cell17 = row.insertCell(16);
+          var cell18 = row.insertCell(17);
 
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-        var cell8 = row.insertCell(7);
-        var cell9 = row.insertCell(8);
-        var cell10 = row.insertCell(9);
-        var cell11 = row.insertCell(10);
-        var cell12 = row.insertCell(11);
-        var cell13 = row.insertCell(12);
-        var cell14 = row.insertCell(13);
-        var cell15 = row.insertCell(14);
-        var cell16 = row.insertCell(15);
-        var cell17 = row.insertCell(16);
-        var cell18 = row.insertCell(17);
-
-        cell1.innerHTML = raceDate;
-        cell1.style.textAlign = "left";
-        cell1.style.paddingLeft = "10px";
-        cell2.innerHTML = c;
-        cell3.innerHTML = cl;
-        cell4.innerHTML = pl;
-        cell5.innerHTML = rating;
-        cell6.innerHTML = distance;
-        cell7.innerHTML = t;
-        cell8.innerHTML = g;
-        cell9.innerHTML = bar;
-        cell10.innerHTML = cwt;
-        cell11.innerHTML = hwt;
-        cell12.innerHTML = position;
-        cell13.innerHTML = lbw;
-        cell14.innerHTML = finishTime;
-        cell15.innerHTML = winSecond;
-        cell16.innerHTML = gear;
-        cell17.innerHTML = jockey;
-        cell18.innerHTML = trainer;
-        ind += 1;
-      });
+          cell1.innerHTML = raceDate;
+          cell1.style.textAlign = "left";
+          cell1.style.paddingLeft = "10px";
+          cell2.innerHTML = c;
+          cell3.innerHTML = cl;
+          cell4.innerHTML = pl;
+          cell5.innerHTML = rating;
+          cell6.innerHTML = distance;
+          cell7.innerHTML = t;
+          cell8.innerHTML = g;
+          cell9.innerHTML = bar;
+          cell10.innerHTML = cwt;
+          cell11.innerHTML = hwt;
+          cell12.innerHTML = position;
+          cell13.innerHTML = lbw;
+          cell14.innerHTML = finishTime;
+          cell15.innerHTML = winSecond;
+          cell16.innerHTML = gear;
+          cell17.innerHTML = jockey;
+          cell18.innerHTML = trainer;
+          ind += 1;
+        });
+      }
     },
   },
 };
