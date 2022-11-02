@@ -11,10 +11,12 @@
             <h1>|</h1>
           </div>
           <p class="about">{{ user.email }} </p>
+          
         </div>
         <div class = "logout">
           <LogoutComp @added="change" />
         </div>
+        
         <BookmarkedTable/>
     </div>
 
@@ -143,6 +145,7 @@ export default {
     color: #6a2889;
     width: 30%;
     font-family: "Roboto", sans-serif;
+    font-weight: bolder;
 }
 
 .divider {
@@ -159,16 +162,12 @@ export default {
     color: #6a2889;
     width: 30%;
     font-family: "Roboto", sans-serif;
+    font-weight: bolder;
 }
 
 .logout {
-  float: right;
+  display: inline-block;
 }
-
-
-
-
-
 
 
 </style>
