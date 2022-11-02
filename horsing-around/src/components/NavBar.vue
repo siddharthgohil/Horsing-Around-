@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script>
+<script  scoped>
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
