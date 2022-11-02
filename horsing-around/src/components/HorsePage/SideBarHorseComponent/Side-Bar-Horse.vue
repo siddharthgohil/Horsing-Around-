@@ -58,18 +58,8 @@ export default {
       this.$emit("changeTab", tabName);
     },
     changeColors(tabName) {
-      var pagesList = ["AllHorses", "Comparison", "BookMarked", "Combination"];
-      for (let i = 0; i < 4; i++) {
-        if (pagesList[i] != tabName) {
-          document
-            .getElementById(pagesList[i] + "Button")
-            .classList.remove("side-btn-active");
-        } else {
-          document
-            .getElementById(pagesList[i] + "Button")
-            .classList.add("side-btn-active");
-        }
-      }
+        document.getElementsByClassName("side-btn-active")[0].classList.remove("side-btn-active");
+        document.getElementById(tabName + "Button").classList.add("side-btn-active");
     },
   },
 };
