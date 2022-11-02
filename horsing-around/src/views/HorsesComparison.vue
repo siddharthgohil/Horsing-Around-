@@ -30,35 +30,33 @@ import RacingPositionsGraph from "@/components/RacingPositionsGraph.vue";
 import BestPerformers from "@/components/HorsePage/BestPerformers.vue";
 
 export default {
-  name: "HorseComparison",
-  components: {
-    HorsesComparisonComp,
-    SideBarHorse,
-    RacingPositionsGraph,
-    BestPerformers,
-  },
-  data() {
-    return {
-      user: false,
-      currTab: "AllHorses",
-    };
-  },
-  mounted() {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.user = user;
-      }
-    });
-  },
-
-  methods: {
-    display(currTab) {
-      this.currTab = currTab;
-      //this.$refs.positions.display(raceNum)
+    name: "HorseComparison",
+    components: {
+        HorsesComparisonComp,
+        SideBarHorse,
+        RacingPositionsGraph,
+        BestPerformers,
     },
-  },
-};
+    data() {
+        return {
+            user: false,
+            currTab: "Comparison",
+        };
+    },
+    mounted() {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                this.user = user;
+            }
+        });
+    },
+    methods: {
+        display(){
+            console.log("loaded horse comp page");
+        }
+    }
+}
 </script>
 
 <style scoped>
