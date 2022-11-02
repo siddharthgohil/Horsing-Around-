@@ -37,6 +37,30 @@ export default {
   justify-content: space-evenly;
 }
 .top_one {
+    margin-top: 0px !important;
+}
+
+.card {
+    background: #fff;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+    margin: 8px 0px;
+    width: 100%;
+    height: 30%;
+}
+
+h6 {
+    text-align: left;
+    color: #6a2889;
+    margin-bottom: 20px;
+}
+
+.left_side {
+    margin-top: 3%;
+    width: 20%;
+}
+.top_one {
   margin-top: 0px !important;
 }
 .card {
