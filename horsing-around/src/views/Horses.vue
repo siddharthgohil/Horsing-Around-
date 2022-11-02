@@ -3,10 +3,8 @@
     <div class="AllHorses">
       <SideBarHorse />
       <div class="content">
-
-         <!-- For All horse Page-->
+        <!-- For All horse Page-->
         <AllHorses />
-        
 
         <!-- For Individual horse Page-->
         <VthingTop />
@@ -22,8 +20,6 @@
         <HorsesPage />
         <VthingBottom />
         <IndividualHorseAllRaceStats />
-
-
       </div>
     </div>
   </div>
@@ -33,7 +29,6 @@
 </template>
 
 <script>
-
 import SideBarHorse from "@/components/HorsePage/SideBarHorseComponent/Side-Bar-Horse.vue";
 
 import AllHorses from "@/components/HorsePage/AllHorses.vue";
@@ -52,7 +47,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 export default {
   name: "HorseView",
   components: {
-  
     SideBarHorse,
     AllHorses,
     //HorsesPage,
@@ -62,7 +56,7 @@ export default {
     IndividualHorseAllRaceStats,
     IndividualHorseStats,
     VthingTop,
-    VthingBottom
+    VthingBottom,
   },
   data() {
     return {
@@ -79,12 +73,12 @@ export default {
     });
   },
   methods: {
-    display(raceNum){
-      this.raceNum = raceNum
-      this.$refs.positions.display(raceNum)
-    }
-  }
-}
+    display(raceNum) {
+      this.raceNum = raceNum;
+      this.$refs.positions.display(raceNum);
+    },
+  },
+};
 </script>
 
 <style scoped>

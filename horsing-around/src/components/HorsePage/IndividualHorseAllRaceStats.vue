@@ -1,6 +1,5 @@
 <template>
-
-  <div  class="HorseStats">
+  <div class="HorseStats">
     <table id="raceDetails" class="auto-index">
       <tr class="Header_Row">
         <th class="first_col">Race / Trial Date</th>
@@ -43,7 +42,7 @@ export default {
   },
   methods: {
     async display(raceNum) {
-      let z = await getDocs(collection(db, "Horse"+raceNum));
+      let z = await getDocs(collection(db, "Horse" + raceNum));
       console.log(z);
       var ind = 1;
 
@@ -91,7 +90,7 @@ export default {
         var cell18 = row.insertCell(17);
 
         cell1.innerHTML = raceDate;
-        cell1.style.textAlign ="left";
+        cell1.style.textAlign = "left";
         cell1.style.paddingLeft = "10px";
         cell2.innerHTML = c;
         cell3.innerHTML = cl;
@@ -110,7 +109,7 @@ export default {
         cell16.innerHTML = gear;
         cell17.innerHTML = jockey;
         cell18.innerHTML = trainer;
-        ind+=1
+        ind += 1;
       });
     },
   },
@@ -119,17 +118,17 @@ export default {
 
 <style scoped>
 #HorseStats {
-    width: 95%;
-    background: #fff;
-    min-height: 320px;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  width: 95%;
+  background: #fff;
+  min-height: 320px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .Header_Row {
-      color: #6A2889;
-    border-bottom: 3px solid #6A2889;
-    padding-top: 10px;
+  color: #6a2889;
+  border-bottom: 3px solid #6a2889;
+  padding-top: 10px;
 }
 table {
   width: 100%;
@@ -153,10 +152,9 @@ table {
   margin: 40px;
   background-color: #fff;
   color: black;
-
 }
-th,td{
-
+th,
+td {
   text-align: center;
   padding: 8px;
   background-color: #fff;
@@ -164,16 +162,15 @@ th,td{
 }
 
 #HorseStats {
-    width: 95%;
-    background: #fff;
-    margin: auto;
-    margin-top: 20px;
-    padding-bottom: 10px;
-    
+  width: 95%;
+  background: #fff;
+  margin: auto;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 
-.first_col, td.first_col {
+.first_col,
+td.first_col {
   text-align: left !important;
 }
-
 </style>
