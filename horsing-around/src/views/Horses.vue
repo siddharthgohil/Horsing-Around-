@@ -17,7 +17,7 @@
           @changeChart="display(this.raceNum)"
         />  -->
 
-        <HorsesPage />
+        <!-- <HorsesPage /> -->
         <VthingBottom />
         <IndividualHorseAllRaceStats />
       </div>
@@ -49,8 +49,6 @@ export default {
   components: {
     SideBarHorse,
     AllHorses,
-    //HorsesPage,
-    //RacingPositionsGraph,
     IndividualHorseRaceStats,
     IndividualHorseTrainer,
     IndividualHorseAllRaceStats,

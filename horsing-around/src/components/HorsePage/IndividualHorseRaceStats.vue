@@ -37,7 +37,7 @@ export default {
   methods: {
     async display(raceNum) {
       let z = await getDocs(collection(db, "Horse" + raceNum + "_Stats"));
-      console.log(z);
+      // console.log(z);
       var ind = 1;
 
       z.forEach((docs) => {

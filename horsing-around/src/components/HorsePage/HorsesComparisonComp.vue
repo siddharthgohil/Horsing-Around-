@@ -79,6 +79,12 @@ export default {
       //alert(event.target.selectedOptions[0].innerHTML);
     },
   },
+  data() {
+    return {
+      key: false,
+      selected: false,
+    };
+  },
 };
 </script>
 

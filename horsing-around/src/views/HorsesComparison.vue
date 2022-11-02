@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         display(){
-            console.log("loaded horse comp page");
+            // console.log("loaded horse comp page");
         }
     }
 }
