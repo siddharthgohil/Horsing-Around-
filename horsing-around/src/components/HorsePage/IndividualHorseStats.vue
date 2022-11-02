@@ -2,7 +2,7 @@
   <div id="HorseStats">
     <img id="HorseMugShot" src="../../assets/images/Horse_image.png" />
     <div class="Individual_Details">
-      <h5 class="HorseName">Horse Name (yes Horse nickname or something)</h5>
+      <h5 class="HorseName">Den of Thieves</h5>
       <table id="Horse_Actual_Stats">
         <tr>
           <td>5yo Br AUS G SH</td>
