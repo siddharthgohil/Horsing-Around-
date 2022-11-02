@@ -32,25 +32,12 @@ export default {
     name: 'SideBarHorse',
     methods: {
         changeTab(tabName) {
-            console.log("herebefore");
             this.$emit("changeTab", tabName);
-            let buttons_list =  document.getElementsByTagName("button");
-            let num_buttons = buttons_list.length;
-            for (let i = 0; i < num_buttons; i++) {
-                if (buttons_list[i].id != tabName) {
-                    console.log(buttons_list[i].id);
-                    document
-                        .getElementById(tabName)
-                        .classList.remove("side-btn-active");
-                } else {
-                    console.log(tabName + " tabname");
-                    document
-                        .getElementById(tabName)
-                        .classList.add("side-btn-active");
-                }
-            }
+            document.getElementsByClassName("link-container side-btn-active")[0].classList.remove("side-btn-active");
+            document.getElementById(tabName).classList.add("side-btn-active");
         },
   },
+
 }
 </script>
 
@@ -74,11 +61,12 @@ export default {
         background-color: #954ab8;
         color: white;
     }
+    .side-btn {
+        width: 100%;
+    }
     .side-btn-active {
         color: #954ab8;
         background-color: #f1ecec;
     }
-    .side-btn {
-        width: 100%;
-    }
+
 </style>
