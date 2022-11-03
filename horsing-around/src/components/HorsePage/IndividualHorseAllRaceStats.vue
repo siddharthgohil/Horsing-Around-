@@ -160,7 +160,7 @@ td {
   text-align: center;
   padding: 8px;
   background-color: #fff;
-  color: #954ab8;
+  color: #6a2889;
 }
 
 #HorseStats {

@@ -92,7 +92,6 @@ export default {
 
 <style scoped>
 table {
-  font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
   padding: 30px;
@@ -116,7 +115,7 @@ td {
   text-align: center;
   padding: 8px;
   background-color: #fff;
-  color: #954ab8;
+  color: #6a2889;
 }
 
 #HorseStats {

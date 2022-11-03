@@ -171,4 +171,11 @@ td {
   background-color: #fff;
   color: #954ab8;
 }
+.button {
+  background: #6a2889;
+  border-radius: 50px;
+  width: 100px;
+  border: none;
+  color: #fff;
+}
 </style>
