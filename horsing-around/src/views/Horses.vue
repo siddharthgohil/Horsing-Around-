@@ -23,6 +23,9 @@
         <HorseComparisonDiv />
         <HorsesComparisonComp />
       </div>
+      <div class="content" v-if="bookMarkedPage">
+        <BookmarkedTable/>
+      </div>
     </div>
   </div>
 
@@ -53,13 +56,15 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import HorseComparisonDiv from "@/components/HorsePage/HorseComparisonDiv.vue"
 import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue";
 import BestPerformers from "@/components/HorsePage/BestPerformers.vue";
+import BookmarkedTable from "@/components/BookmarkedTable.vue";
+
 
 export default {
   name: "HorseView",
   components: {
     SideBarHorse,
     AllHorses,
-    //HorsesPage,
+    BookmarkedTable,
     RacingPositionsGraph,
     IndividualHorseRaceStats,
     IndividualHorseTrainer,
@@ -77,6 +82,7 @@ export default {
       currTab: "AllHorses",
       allHorsesPage: true,
       ComparisonPage: false,
+      bookMarkedPage: false,
     };
   },
   mounted() {
@@ -92,8 +98,12 @@ export default {
       this.$refs.sideBarRef.changeColors(currTab);
       this.allHorsesPage = false;
       this.ComparisonPage = false;
+      this.bookMarkedPage = false;
       if (currTab == "Comparison") {
         this.ComparisonPage = true;
+      }
+      else if (currTab == "BookMarked") {
+        this.bookMarkedPage = true;
       }
       else {
         this.allHorsesPage = true;
