@@ -26,7 +26,7 @@
         active-class="active"
         v-on:click="changeTabParent('BookMarked')"
       >
-        <button id="BookMarkedButton" class="link-container">BookMarked</button>
+        <button id="BookMarkedButton" class="link-container">Bookmarked</button>
       </router-link>
       <router-link
         to="/horses"
