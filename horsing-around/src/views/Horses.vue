@@ -21,7 +21,6 @@
           <BestPerformers />
         </div>
         <HorseComparisonDiv />
-        <HorsesComparisonComp />
       </div>
       <div class="content" v-if="bookMarkedPage">
         <BookmarkedTable/>
@@ -54,7 +53,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 import HorseComparisonDiv from "@/components/HorsePage/HorseComparisonDiv.vue"
-import HorsesComparisonComp from "@/components/HorsePage/HorsesComparisonComp.vue";
 import BestPerformers from "@/components/HorsePage/BestPerformers.vue";
 import BookmarkedTable from "@/components/BookmarkedTable.vue";
 
@@ -72,7 +70,6 @@ export default {
     IndividualHorseStats,
     VthingTop,
     VthingBottom,
-    HorsesComparisonComp,
     HorseComparisonDiv,
     BestPerformers,
   },
