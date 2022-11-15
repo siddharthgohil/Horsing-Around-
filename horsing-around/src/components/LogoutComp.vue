@@ -28,7 +28,7 @@ export default {
       const user = auth.currentUser;
       signOut(auth, user);
       this.$router.push({ name: "Racing" });
-      this.$parent.$parent.$emit("added"); // goes to profile and that goes to router that goes to app
+      this.$parent.$parent.$emit("added");
     },
   },
 };
@@ -36,12 +36,6 @@ export default {
 
 <style  scoped>
 #btn {
-  /*display: flex;
-  float: right;
-  text-align: center;
-  padding: 10x;
-  margin-right: 20px;
-  margin-bottom: 20px; */
   background: #dfa3f1;
   padding: 10px 50px;
   border-radius: 3px;
@@ -64,8 +58,6 @@ export default {
 #btn:hover { 
   background: #6a2889;
   color: #222;
-  /*color: rgb(243, 236, 236); */
-  /*background-color: rgb(255, 94, 0); */
   box-shadow: 3px 3px grey;
 }
 </style>

@@ -2,7 +2,6 @@
 <div class="container">
   <div id="loginSegment" style="text-align: center">
     <img id="bg" src="@/assets/logo.png" alt="" class="center" />
-    <!-- <h3 id="mainHead">HORSING AROUND</h3> -->
     <p class="phtext">Sign in with the following Options:</p>
     <div id="firebaseui-auth-container"></div>
   </div>  

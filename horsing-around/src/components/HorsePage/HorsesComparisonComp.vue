@@ -76,7 +76,6 @@ export default {
     clicked_first(event) {
       alert("clicked");
       console.log(event);
-      //alert(event.target.selectedOptions[0].innerHTML);
     },
   },
   data() {
